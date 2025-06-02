@@ -1,0 +1,82 @@
+//* ============== 기본 적용 ================ */
+* { 
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+/* ============== 헤더 (배경색, 글자색) ================ */
+.header {
+  background-color: #2196F3;
+  color: white;
+}
+/* ============== 헤더 (내용물) ================ */
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 1280px;
+  margin: 0 auto;
+}
+/* ============== 헤더 (HOME 글씨 부분) ================ */
+.menu {
+  display: flex;
+  margin-left: 80px;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* ============== 헤더 (오른쪽 링크 부분) ================ */
+.menubar {
+  display: flex;
+  margin-right: 80px;
+
+}
+
+.menubar > li {
+  margin-left: 80px;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* ============== 본문 ================ */
+.main {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 30px;
+}
+/* ============== 본문 제목 ================ */
+.title {
+  font-family: "바탕";
+  font-size: 36pt;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+/* ============== 푸터 (배경색, 글자색) ================ */
+.footer {
+  background-color: grey;
+  color: white;
+}
+/* ============== 푸터 (내용물) ================ */
+.footer_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 50px;
+}
+
+.content>.section-title{
+  font-family: "바탕";
+  font-size: 36pt;
+  font-weight: bold;
+  padding-bottom: 20p
+}
+   

@@ -1,0 +1,22 @@
+/* 누구를{무엇을 : 어떻게; }*/
+
+.title{
+    font-family : "양진체";
+    font-size : 40px;
+    font-style: italic;
+    font-weight : bold
+}
+.content{
+    font-family:'양진체';
+    color : purple;
+    word-spacing: 20px;
+    letter-spacing : 20px;
+    line-height : 200%;
+}    
+.writer{
+    text-align: center;
+    text-decoration: underline overline line-through;
+    text-shadow: 1px 1px 5px red;
+    color: green;
+    color: rgb(140, 255, 100);
+    color: #000000;

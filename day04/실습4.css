@@ -1,0 +1,34 @@
+/**{border: 1px solid red;}*/
+.product{
+   border: 1px solid #eeeeee; /*구역 테두리*/
+   width: 270px;
+}
+/*제품이미지*/
+.product-img{
+    width: 270px; /*이미지 가로 사이즈*/
+}
+/*제품하단구역*/
+.product-info{
+    border-top: 1px solid #eeeeee;
+    padding: 10px;
+    font-family: 12px;
+}
+.product-info > .title{
+    font-weight: bold; /*글꼴 진하게*/
+    font-size: 15px;
+    margin-bottom: 10px; /*바깥 아래 여백*/
+}
+.product-info >.price{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product-info > .content{
+    line-height: 160%; /*줄간격*/
+    margin-bottom: 10px;
+}
+
+.product-info >.etc>.orange{
+    color: orange;
+    font-weight: bold;
+    
+}

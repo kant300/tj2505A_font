@@ -1,0 +1,25 @@
+/* wrap :  전체구역*/
+*{box-sizing: border-box;} /*구역사이즈 기준: */
+#wrap{
+    width: 1280px;/*웹 표준 가로사이즈 :1280px*/
+    margin: 0 auto;
+}    
+
+
+/*본문*/
+#main{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+#main>#contnts{ width: 850px;}
+#main>#aside{width: 400px;}
+
+/*확인용*/
+*{border: 1px solid red;}
+#header{height: 150px;}
+#main{height: 400px;}
+#footer{height: 100px;}

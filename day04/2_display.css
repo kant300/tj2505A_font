@@ -1,0 +1,32 @@
+*{ border : 1px solid red; }
+.s1{
+    display: inline;
+    width: 100px;
+}
+.s2{
+    display: block;
+    width: 100px; height: 100px;
+    margin: 20px; padding: 20px;
+}
+.s3{
+    display: inline-block;
+    width: 100px; height: 100px;
+    margin: 20px; padding: 20px;
+}
+.s4{
+    display: ;
+}
+.flexbox1{
+    display: flex;
+}
+.box{
+    box-sizing: content-box;
+    width: 500px;
+    padding: 10px;
+}
+.box2{
+    box-sizing: border-box;
+    width: 500px;
+    padding: 10px;
+
+}

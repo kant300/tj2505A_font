@@ -1,0 +1,23 @@
+.bookimg{
+width: 300px;
+}
+.title{
+    font-family:"맑은고딕";
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0px 15px 2px;
+}
+.point1{
+    color:orange;
+    font-size: 35px;
+}
+.content{
+    background-color: rgb(18, 49, 153);
+    color:white;
+    padding: 25px 20px ;
+    line-height: 160%;
+    width: 500px;
+}
+.point2{
+    color: orange;
+}

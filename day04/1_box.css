@@ -1,0 +1,63 @@
+/* CSS 주석처리 */
+
+{속성명 : 값}
+/* 1. 모든 구역의 테두리 */
+*{
+    border : solid 3px red;
+}
+
+.구역1
+{
+border-top: solid 1px orange;
+border-right: dotted 2px blue;
+border-bottom: dashed 3px black;
+border-left: double 4px green;
+border-radius:20px;
+box-shadow: 3px 3px 5px orange;
+text-align: center;
+width: 500px ;
+height: 500px ;
+}
+img{width:150px;text-align: center;}
+.구역2{text-align: center;} 
+input{
+    width: 200px; height: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align: center;
+}
+form{text-align: right;}    
+
+.구역3{
+    padding: 50px;
+    margin: 70px;
+
+}
+.구역4{
+    
+    width: 100px;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px
+}
+.구역5{
+    padding: 20px 30px40px 50px;
+    padding: 20px 30px;
+    padding:20px;
+}
+.구역6{
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    color: orange;
+    background-color: black;
+    
+
+
+
+}

@@ -1,0 +1,20 @@
+.title{
+    font-family: "궁서";
+    font-style: italic;
+    font-size: 50px;
+}
+.content{
+    font-family:"굴림t";
+    color: blue;
+    font-weight: bold;
+    font-size: 18px;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    line-height: 150%;
+}
+.writer{
+    text-align: center;
+    color: red;
+    text-decoration: underline overline line-through;
+    text-shadow: 1px 1px 5px gray;
+}
