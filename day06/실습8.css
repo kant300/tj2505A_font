@@ -7,10 +7,9 @@ a{
 }
 li{list-style-type: none;}
 /*==========헤더==============*/
-#header{/*id를 선택할때는 #id명*/
+#header{
     display: flex;
-    flex-direction: row; /*가로배치 : 생략가능*/
-    width: 1280px;  /*가로사이즈*/
+    justify-content: space-between;
     margin: 15px ; /*구역 가로 가운데 자동정렬*/
 }
 .header-logo{
