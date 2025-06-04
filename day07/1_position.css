@@ -1,0 +1,37 @@
+.box{
+    width: 100px; height: 100px;
+    border: 1px solid red;
+    background-color: yellow;
+}
+.box2{
+    background-color: red;
+    position: relative; /*상대적인*/
+    /* 본래 지정된 구역의 위치부터 시작*/
+    top: 50px; /*기존위치에서부터 위쪽에서 아래로 이동*/
+    left: 50px;
+
+}
+.box3{
+    background-color: green;
+    position: absolute;/*절대적인*/
+    /*부모(상위)요소의 위치부터 시작점*/
+    top: 50px;
+    left: 50px;
+
+}
+.box4{
+   background-color: blue;
+   position: static;/*정적인/기본값*/
+   /*코드작성순으로 배치, 위치(top/left/right/bottom) 속성 불가능*/
+   top: 50px; /*사용불가*/
+   left: 50px; /*사용불가*/
+}
+.box5{
+    background-color: gray;
+    position: fixed; /*디바이스 화면의 위치고정*/
+    bottom: 100px; /*화면에서 아래변 기준을 100ox위로 이동*/
+    right: 100px;
+}
+.parent{
+    background-color: orange;
+}
