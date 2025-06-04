@@ -3,6 +3,7 @@
     border: 1px solid red;
     background-color: yellow;
 }
+
 .box2{
     background-color: red;
     position: relative; /*상대적인*/
@@ -35,3 +36,4 @@
 .parent{
     background-color: orange;
 }
+

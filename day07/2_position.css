@@ -1,0 +1,20 @@
+/* 1. 팝업 CSS */
+#popup{
+    background-color: beige;
+    width: 200px; height: 200px;
+    position: fixed;
+    bottom: 50px; right: 10px;
+    /*position 사용할경우 다른 요소 겹치는 경우 : z-index */
+    z-index: 4;
+}
+
+/* 2. 헤더메뉴 CSS */
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    position: sticky; /*끈적끈적한*/
+    top: 50px;
+    z-index: 3;
+}
+#header >ul{ display: flex; }
