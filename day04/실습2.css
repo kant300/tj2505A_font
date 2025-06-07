@@ -1,11 +1,12 @@
+/* img{ } vs .bookimg */
 .bookimg{
 width: 300px;
 }
 .title{
     font-family:"맑은고딕";
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px 0px 15px 2px;
+    font-size: 20px; /* 글꼴 크기 */
+    font-weight: bold; /* 글꼴 굵게 */
+    margin: 20px 0px 15px 2px; /* 바깥여백 위=20 오=0 아=15 왼=2 */
 }
 .point1{
     color:orange;
@@ -15,7 +16,7 @@ width: 300px;
     background-color: rgb(18, 49, 153);
     color:white;
     padding: 25px 20px ;
-    line-height: 160%;
+    line-height: 160%; /*줄간격*/
     width: 500px;
 }
 .point2{
