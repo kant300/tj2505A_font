@@ -35,6 +35,7 @@
     border: 1px solid red; width: 200px;
     display: flex;
     align-items: center;
+    /*자식요소들은 부모요소의 세로 가운데 정렬*/
   
 }
     .box1{width: 50px; height: 50px;}
@@ -45,7 +46,7 @@
     border: 1px solid red;  width: 200px;
     display: flex;
     align-items: flex-start;
-
+    /*자식요소들은 부모 요소의 윗변/상단 정렬 vs stretch */
 }    
     .box1{width: 50px; height: 50px;}
     .box2{width: 100px; height: 100px;}
@@ -55,6 +56,7 @@
     border: 1px solid red; width: 200px;
     display: flex;
     align-items: flex-end;
+    /*자식요소들은 부모요소의 밑변/하단 정렬*/
 }    
     .box1{width: 50px; height: 50px;}
     .box2{width: 100px; height: 100px;}
