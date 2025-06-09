@@ -1,11 +1,11 @@
 
 .box{
-   /* border: 1px solid red;
-    width: 100px; */
+    border: 1px solid red;
+    width: 100px; 
 }
 .flexbox1{
     border: 1px solid blue;
-    width: 100px;
+    width: 250px;
     display: flex;
     flex-wrap: nowrap;
 /*nowrap : 만일 하위요소들이 부모요소의 크기보다 커지면 하위요소 자동크기조정
@@ -27,12 +27,11 @@
 .flexbox4{
     border: 1px solid blue; width: 250px;
     display: flex;
-    flex-direction: row;/* 기본값 */
+    flex-direction: row;/* (기본값)가로방향배치 */
 }
 .flexbox5{
     border: 1px solid blue; width: 250px;
     display: flex;
     flex-direction: column; /*세로배치*/
     flex-wrap: nowrap;
-
 }

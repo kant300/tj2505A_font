@@ -1,5 +1,5 @@
 /* wrap :  전체구역*/
-*{box-sizing: border-box;} /*구역사이즈 기준: */
+*{box-sizing: border-box;} /*구역사이즈 기준: 컨텐츠+안쪽여백+테두리*/
 #wrap{
     width: 1280px;/*웹 표준 가로사이즈 :1280px*/
     margin: 0 auto;
@@ -9,13 +9,13 @@
 /*본문*/
 #main{
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap; /*크기 자동 맞춤*/
+    flex-direction: row; /*배치 방향 : 가로*/
+    justify-content: space-between; /*양쪽에 여백없이 균등정렬*/
     align-items: stretch;
 
 }
-#main>#contnts{ width: 850px;}
+#main>#contnts{ width: 850px;} /*1280에서 850px*/
 #main>#aside{width: 400px;}
 
 /*확인용*/
