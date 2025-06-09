@@ -1,0 +1,55 @@
+
+/*  */
+.box{
+    border: 1px solid red;
+    padding: 10px; margin-bottom: 100px;
+}
+.widthheight{
+    width: 200px; height: 200px;
+}
+.minWidth{
+    min-width: 600px;
+}
+.maxWidth{
+    max-width: 600px; /*최대 가로 사이즈 600px 설정 */
+    /* 최소 가로 사이즈는 설정이 없으므로 100%
+    즉]
+
+*/
+}
+.minHeight{
+    width: 200px;
+    min-height: 100px;/*최소 세로 사이즈 100px 설정*/
+    /* 최대 세로 사이즈는 설정이 없으므로 100%
+    즉]내용물에 높이가 100px보다 작으면 100px고정
+    크면 100%*/    
+}
+.maxHeight{
+    width: 200px;
+    max-height: 100px;
+    /*즉]내용물에 높이가 100px보다 작으면 100px고정
+    크면 100%*/   
+}
+/*2. overflow : 지정요소보다 하위요소 크기가 더 커졌을때*/
+.overflow > div{
+    width: 200px; height: 100px;
+    background-color: beige;
+}
+
+.overflow :nth-child(2){ /* -> <h2> 1. overfolw </h2>*/
+    overflow: visible; /*(기본값)  */
+
+}
+.overflow :nth-child(4){
+    overflow: hidden;
+}
+.overflow :nth-child(6){
+    overflow: scroll;
+}
+.overflow :nth-child(8){
+    overflow: auto;
+}
+.overflow :nth-child(10){
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

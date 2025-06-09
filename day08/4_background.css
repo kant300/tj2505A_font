@@ -1,0 +1,58 @@
+
+/* 1.background */
+.box{
+    border: 2px solid red;
+    padding: 30px;
+   
+}
+.box p{
+    background-color: white;
+    padding: 5px; border: 1px solid white;
+}
+.color1{
+   background-color: blue ;
+   background-color: rgb(0, 0, 255);
+   background-color: #0000ff;
+   background-color: rgba(0, 0, 255, 0.5);
+   /*rgba(레드,그린,블루,투명도) : 1(100%) ~ 0(0%) */
+}
+.img1{
+    /*background-image: url("파일경로")*/
+    background-image: url("인물\ \(2\).jpg");
+    background-position: center; /*이미지 위치*/
+    background-repeat: no-repeat;/*채우기없음*/
+}
+.img2{
+    background-image: url("패턴.jpg");
+    background-repeat: repeat ;/*(기본값)만일 비어있는 공간이 있으면 채움*/
+}
+.img3{
+    background-image: url("아이콘.png");
+    background-repeat: no-repeat; /*채우기없음*/
+    background-position: center; /*이미지 위치*/
+    background-size: contain; /*비율유지, 요소안에 표시(빈공간 생길수있음)*/
+    background-size: cover;
+    background-size: contain;
+    background-color: black;/*만일 빈공간이 있을때 배경색*/
+}
+.img4{
+    background-image: url("인물\ \(2\).jpg");/*배경이미지*/
+    background-repeat: no-repeat; /*채우기*/
+    background-size: cover;/*비율유지, 잘림 생길수 있음 */
+    background-position: center;
+    background-attachment: fixed;/*스크롤 이용해도 배경이미지는 고정된다.
+    - fixed :패럴렉스 효과, 요소의 텍스트는 고정되고 스크롤에 따라 이동되는 효과*/
+}
+.box2{
+    width: 100px; height: 100px;
+    border: 2px solid red;
+    background-image: url("네이버아이콘.png");
+    background-repeat: no-repeat;
+    background-position: 300px 300px;
+    background-size: cover;
+    background-position: center left;
+    background-position: -50px -300px;
+    
+
+
+}
