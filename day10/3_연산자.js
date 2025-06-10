@@ -141,4 +141,4 @@ console.log(`결과 : ${result}`)
 // 만일 이름이 '유재석' 이면 뒤에 (방장) 이라고 이름 뒤에 붙이고 아니면 생략한다.  HTML의 <ol> 에 결과를 출력하시오.
 let 이름 = prompt( "이름 : ")
 let result2= 이름 == "유재석" ? `${이름}(방장)` : `${이름}` //*변수명은 중복이 불가능하다  // 논리는 항상 true와 false로 답한다.
-document.write( `<ol> <li> ${ result2 } </li> </ol> )
+document.write( `50<ol> <li> ${ result2 } </li> </ol>` );
