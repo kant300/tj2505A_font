@@ -118,7 +118,16 @@ select:focus{
     border-bottom: 2px solid black;
 }
 
+
 /*====== 로그인상단 css ======*/
+#login_1{
+   width: 1200px;
+   margin: 0 auto;
+}
+#login_2{
+    width: 600px;
+    margin: 0 auto;
+}
 #login-title{
     display: flex;
     justify-content: space-between;
@@ -138,24 +147,34 @@ select:focus{
      width: 500px; height: 65px;
      margin-top: 60px;
      margin-bottom: 70px;
-     padding: 16px;
+     padding: 15px 0px 0px 0px;
 }
 .login_box{
    display: flex;
    justify-content: space-evenly
 }
+/*.login_box2{
+    width: 250px; height: 65px;
+    background-color: #eeeeee;
+    color: grey;
+    text-align: center;
+}
+*/
 .login_content{
     margin-top: 60px;
+    
 
 }
 .login_id, .login_pwd{
     width: 500px; height: 45px;
     margin-top: 15px;
     padding: 0px 20px;
-    border: 1px solid grey;
+    border: 2px solid #eeeeee;
 
 }
 .login_content1{
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
     color: grey;
     margin-bottom: 20px;
@@ -188,7 +207,9 @@ select:focus{
     justify-content: space-evenly;
 }
 .login_list img{
-    width: 50px; height: 50px;
+    width: 42px; height: 42px;
+    object-fit: cover;
+
 
 }
 
