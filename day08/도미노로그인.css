@@ -134,17 +134,62 @@ select:focus{
 
 /*===== 로그인 가운데 =====*/
 .login_main{
-    width: 600px; height: 50px;
-    display: flex;
-    border: 1px solid black;
+     border: 1px solid black;
+     width: 500px; height: 65px;
+     margin-top: 60px;
+     margin-bottom: 70px;
+     padding: 16px;
+}
+.login_box{
+   display: flex;
+   justify-content: space-evenly
+}
+.login_content{
+    margin-top: 60px;
 
+}
+.login_id, .login_pwd{
+    width: 500px; height: 45px;
+    margin-top: 15px;
+    padding: 0px 20px;
+    border: 1px solid grey;
+
+}
+.login_content1{
+    margin-top: 20px;
+    color: grey;
+    margin-bottom: 20px;
+    
+}
+.login_2{
+    border: 1px solid red;
+    width: 500px ; height: 60px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 12px 0px;
+    margin-bottom: 10px;
+
+}
+.login_3{
+    border: 1px solid grey;
+    width: 500px ; height: 60px;
+    text-align: center;
+    padding: 12px 0px;
+    margin-bottom: 50px;
 }
 .login_title1{
-    display: flex;
+    text-align: center;
+    margin-bottom: 45px;
+    
 }
-
+.login_list{
+    display: flex;
+    justify-content: space-evenly;
+}
 .login_list img{
-    width: 50px;
+    width: 50px; height: 50px;
+
 }
 
 

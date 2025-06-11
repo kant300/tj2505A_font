@@ -44,3 +44,17 @@ if ( 10 > 20 ) {console.log("[4] 10은 20보다 크다"); }
 else if ( 10 > 15 ) {console.log("[4] 10은 15보다 크다");}
 else if ( 10 > 10 ) {console.log("[4] 10은 10보다 크다");}
 else { console.log( "[4] 그외이다. ")}
+
+// [5] 중첩
+let 성별 = "남"; let 점수 = 80;
+if( 성별 == "남"){
+    if( 점수 >= 90){ console.log("남자우수")}
+    else{ // 90이상이 아니면 90미만으로 가정 
+        console.log("남자")
+    }
+}else{ // 남이 아니면 여라고 가정}   
+    if( 점수 >=90 ) {console.log("여자우수"); }
+    else{ 
+        console.log("여자")
+    }
+}
