@@ -117,32 +117,6 @@ select:focus{
 .mainMenuInner2:hover .mainMenuInner2-1{
     border-bottom: 2px solid black;
 }
-
-/*====== 공통 css ======*/
-*{
-    width: 1200px;
-}
-
-#login-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 50px 0px 0px;
-    padding: 0px 0px 28px;
-    border-bottom: 2px black;
-}
-.로그인{font-size: 33px;}
-.홈_로그인 span{ color: grey;}
-
-
-
-
-
-
-
-
-
-
 /*==============================푸터 CSS==============================*/
 #footer{
     border-top: 1px solid #ddd;
