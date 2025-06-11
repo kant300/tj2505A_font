@@ -2,10 +2,10 @@
 문제 1: 삼각형 넓이 계산
 밑변과 높이를 각각 prompt 함수로 입력받아, 삼각형의 넓이를 계산하여 콘솔에 출력하는 프로그램을 작성하시오.
 삼각형 넓이 공식: 밑변 * 높이 / 2
-let 밑변 = Number( prompt("밑변" : ) )
-let 높이 = Number( prompt("높이" : ) )
+let 밑변 = Number( prompt("밑변 : " ) );
+let 높이 = Number( prompt("높이 : " ) );
 let 넓이 = Number( (밑변 * 높이)/2 )
-console.log( 넓이 );
+console.log( "넓이 : ", 넓이  );
 
 
 문제 2: 섭씨를 화씨로 변환
