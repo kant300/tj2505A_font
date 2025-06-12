@@ -120,10 +120,15 @@ else{ console.log( '정의되지 않은 역할입니다.'); }
 20세 이상 65세 미만: '10,000원'
 65세 이상: '3,000원'
 */
-// 조건 : age < 8 , age >= 8 && age <== 19 , age >= 20 && age <65 , age >= 65
-let age = Number( prompt( '나이입력 :'); )
-if 
+// 조건 : age < 8 , age >= 8 && age <= 19 , age >= 20 && age <65 , age >= 65
 
+/*
+let age = Number( prompt( '나이입력 :') );
+if( age >= 65 ){ console.log( '3,000원'); }
+else if( age >=20 ){ console.log('10,000원'); }
+else if( age >= 8 ){ console.log('5,000원'); }
+else{ console.log('무료'); }
+*/
 
 
 
@@ -135,7 +140,13 @@ if
 70점 이상 80점 미만: 'C등급'
 70점 미만: '재시험'
 */
-
+/*
+let point = Number( prompt('점수입력 : ') );
+if( point >= 90 ){console.log( 'A등급' ); }
+else if( point >= 80 ){ console.log( 'B등급' ); }
+else if( point >= 70 ){ console.log( 'C등급' ); }
+else{ console.log('재시헝'); }
+*/
 
 
 
@@ -146,3 +157,14 @@ if
 음료 가격 목록 : let drinkPrices = [1000, 1000, 1500];
 사용자로부터 원하는 음료(0, 1, 2)의 번호를 입력받아, 해당하는 음료 이름과 가격을 '선택하신 음료는 [음료이름]입니다. 가격은 [가격]원입니다.' 형식으로 출력하세요. 만약 목록에 없는 번호를 입력하면 '없는 상품입니다.'라고 출력하는 프로그램을 작성하시오.
 */
+ let drinkNames = ['콜라', '사이다', '커피'];
+ let drinkPrices = [1000, 1000, 1500];  // 음료의 번호==인덱스번호
+//조건 : (없는 번호) 0~2 사이(범위논리), num >=0 && num <= 2
+let num = Number(prompt('음료 번호(0~2) :') )
+if( num num >=0 && num <= 2 ){ //(제품번호존재) 만약에 입력받은 번호가 0보다 이상이고 2보다 이하이다. 0~2
+    console.log( `선택하신 음료는 ${ drinkNames[num] } 입니다. 가격은 ${ drinkPrices[num] } 입니다.` );
+}else{ //(그외 : 제품번호없음)
+    console.log( '없는 상품입니다.' )
+}
+indexOf[ 0 , 1 , 2 ]
+indexOf[ 0 , 1 , 2 ]
