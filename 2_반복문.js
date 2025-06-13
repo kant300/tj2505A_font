@@ -26,7 +26,7 @@ let scores = [77, 82, 100, 54, 96];
 let scores = [77, 82, 100, 54, 96];
 for( let index = 0 ; index <= scores.length - 1 ; index++ ) {
     let value = scores[index];  // index번째 요소값 호출
-    if ( value == 100 ) {   // 만야게 해당값이 100(만점) 이면
+    if ( value == 100 ) {   // 만약에 해당값이 100(만점) 이면
         console.log( `${value}점 만점자를 찾았습니다.!` );
         break;  //가장 가까운 for{} 탈출/종료
     }   //if end

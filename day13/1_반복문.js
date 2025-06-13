@@ -81,7 +81,7 @@ for( let 단 = 2 ; 단 <= 9 ; 단++ ){
 line 1부터 5까지 1씩 증가
 star 1부터 (1/2/3/4/5) 까지 1씩 증가 , (1/2/3/4/5) , 현재줄수(line)
 */
-let output = "" ; // 빈 문자열 선언 ㅜ
+let output = "" ; // 빈 문자열 선언 
 for( let line = 1 ; line <=5 ; line++ ){ // --- 행(line), 5번
     // line는 1부터 5이하까지 1씩 증가
     for( let star = 1 ; star <= line ; star++ ){
@@ -99,7 +99,7 @@ for( let i =1 ; i <= 5 ; i++ ){
     console.log( i );
 }
 //  (2) break;      : 가장 가까운 for{}문의 종료/탈출/끝내기
-    // 1부터 10까지 누적합계, 단] 누적합계가 10초고ㅘ이면 종료한다.
+    // 1부터 10까지 누적합계, 단] 누적합계가 10초과이면 종료한다.
 let sum = 0;
 for(let i = 1 ; i <=10 ; i++)    {
     if( sum > 10 ) { break; } // 코드흐름이 break 만나면 for{} 
