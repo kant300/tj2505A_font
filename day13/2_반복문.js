@@ -15,13 +15,13 @@ for( let index = 0 ; index <= scores1.length - 1 ; index++ ){
 }   //for end
 console.log( ` 총점 : ${ sum } , 평균 : ${ sum/scores1.length }` );
 
-/*
+
 문제 7: 특정 조건에서 반복문 탈출하기 (break)
 점수 배열에서 100점 만점자가 처음 나타나면, 그 학생의 점수를 출력하고 
 반복문을 즉시 종료하는 프로그램을 작성하시오.
 let scores = [77, 82, 100, 54, 96];
 출력 예시: 100점 만점자를 찾았습니다!
-*/
+
 // 순회/조회/검색
 let scores = [77, 82, 100, 54, 96];
 for( let index = 0 ; index <= scores.length - 1 ; index++ ) {
