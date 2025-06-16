@@ -306,12 +306,11 @@ console.log(data);
 let html = `<table> <tr>
                         <th>동별</th> <th>세대수</th> <th>인구수(계)</th> <th>인구수(남)</th> <th>인구수(여)</th>
                     </tr>`
-</table>
-for( let index = 0 ; index <= data.length -1 ; index++ ){
+for( let index = 0 ; index <= data.length - 1 ; index++ ){
     const obj3 = data[index];
     //테이블 본문
     html += `<tr> 
-                <td> ${ obj3.동별 }</td> <td>${ obj3.세대수$ } </td> <td>${ obj3.["인구수(계)"] } </td> <td>${ obj3.["인구수(남)"] } </td> <td>${ obj3.["인구수(여)"] } </td>
+                <td> ${ obj3.동별 }</td> <td>${ obj3.세대수 } </td> <td>${ obj3["인구수(계)"] } </td> <td>${ obj3["인구수(남)"] } </td> <td>${ obj3["인구수(여)"] } </td>
             </tr>`
     
     console.log(obj3);
@@ -319,6 +318,8 @@ for( let index = 0 ; index <= data.length -1 ; index++ ){
     console.log( obj3.세대수 );
     console.log( obj3["인구수(계)"] );
     console.log( obj3[ "인구수(남)"] );
-    console.log( obj3[ "인구수(여)"] );
+    console.log( obj3[ "인구수(여)"] ); 
 }  //for end
+
 html += `</table>` //테이블 마크업닫기
+document.write(html);
