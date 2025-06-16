@@ -123,6 +123,7 @@ let numbers = [1, 5, 2, 3, 5, 1, 4, 2];
 힌트: 새로운 배열을 만들고, for 반복문으로 기존 배열을 순회하며 
 새로운 배열에 해당 요소가 없을( .indexOf() == -1 ) 때만 추가(push())합니다.
 */
+/*
 let numbers1 = [1, 5, 2, 3, 5, 1, 4, 2];
 let newNumbers1 = [ ];
 for( let i = 0; i < numbers.length; i++ ){
@@ -131,9 +132,9 @@ for( let i = 0; i < numbers.length; i++ ){
     }
 }
 console.log( numbers);
-console.log( `중복제거된 배열 : `  ${ newNumbers1 } );
+console.log( `중복제거된 배열 : ${ newNumbers1 }` );
 
-
+*/
 
 
 
@@ -167,19 +168,43 @@ if( findIndex >= 0 ){   //제품 찾았다
 }
 
 
+// 재고가 충분( 비교 /논리 판단  ) , 재고를 차감( 연산/수정 )
+// (2) 제품목록에서 입력받은 값 찾아라 , (2-1) 제품목록의 모든 제품들을 순회(조회)
+for( let index = 0 ; index <= products.length - 1 ; index++ ){
+    let product = products[index]; // index 번째의 제품 1개 호출 
+    if( product == 상품명 ){ // 만약에 index 번째 제품명과 입력받은 제품명과 같으면
+        console.log( '존재하는 제품명');
+        if( stock[index] >= 수량 ){ // 만약에 index번째 재고가 입력받은 수량보다 더크면
+            stock[index] -= 수량; // index 번째의 재고를 입력받은 수량만큼 차감(빼기) 한다.
+            console.log('구매 완료!');
+        }else{ // 아니면
+            console.log('재고가 부족합니다.');
+        }
+    } // if end 
+} // for end 
+
 /*
+let products = [ '볼펜', '노트', '지우개'];
+let stock = [10, 5, 20];
+let 상품명 = prompt(' 상품명 입력: ');          // (1) 사용자로부터 구매할 상품명 입력받아,
+let 수량 = Number(prompt(''));                 // (2) 사용자로부터 구매할 수량을 입력받아,
 // 재고가 충분( 비교/논리판단 ), 재고를 차감( 연산/수정 )
+// (2) 제품목에서 입력받은 값 찾아라,  (2-1) 제품목록의 모든 제품들을 순회(조회)
+
+// 
 // 반복문 없이 '볼펜' 과 5를 입력했을때
 if( products.indexOf( '볼펜') != -1 ){
 
 }
-// (2) 제품목록에서 입력받은 값 찾아라.  ( 2-1 ) 제품목록들의 모든 제품들의 순회(조회)
+
 for( let index = 0 ; index <= products.length - 1 ; index++ ){
     let product = products[index];  //index번째의 제품1개 호출
     if( product == 상품명 ){ //만약에 index번째 제품명과 입력받은 제품명과 같으면
         console.log( '존재하는 제품명' );
         if( stock[index] >= 수량 ){ //만약에 index번째 재고가 입력받은 수량보다 더 크면
-            stock[index] -= 수량;   //index
+            stock[index] -= 수량;   //index 번째의 재고를 입력받은 수량만큼 차감(빼기)한다.
+            console.log( '구매 완료!');
+        }else 
 
         }
 
@@ -205,6 +230,17 @@ for 반복문을 사용하여 모든 영화를 순회합니다.
 글래디에이터2   ★★★★★★★☆☆☆
 청설            ★★★★★★☆☆☆☆
 */
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
+let movieRatings = [8, 4, 7, 6];
+for( let index = 0 ; index < movieNames.length - 1 ; index++ ){
+    let movie = movieNames[index]
+    
+    for( ){
+
+    }
+    document.write( movieNames )
+}
+
 
 
 /*
