@@ -1,0 +1,40 @@
+/*===== 공통 CSS 부문 ======*/
+*{ margin: 0px ; padding: 0px ;}/*기본 여백들을 제거*/
+*{ box-sizing: border-box;} /*구역 사이즈기준을 테두리까지*/
+a{ /*링크 기본값 제거*/
+    text-decoration: none; /* 밑줄제거*/
+    color:black;
+}
+li{ list-style-type: none;}/*ul 또는 ol 에서 글머리 제거*/
+
+display: flex;  /* 하위 요소 배치 방법 */
+justify-content: space-between; /* 양쪽 끝 균등 가로 정렬*/
+align-items: center; /* 세로 정렬 */
+width: 1280px;
+margin: 30px auto;/* 가로 가운데 정렬 */
+width: 100%; /* 100% : 디바이스(화면)의 전체비율*/
+display: block;
+
+
+1. 변수명.push( 새로운 값 ) : 배열내 새로운 요소 추가
+2. 변수명.splice( 인덱스, 개수 ) : 배열내 지정한 인덱스부터 개수 요소 삭제
+3. 변수명.indexOf( 찾을값 ) : 배열내 '찾을값' 존재하는 인덱스 번호 반환, 없으면 -1 반환
+
+가로로 이기는 수
+(board
+
+for( let 단 = 2 ; 단 <= 9 ; 단++ ){
+    for(let 곱 = 1 ; 곱 <= 9 ; 곱++ ){
+        console.log( ` ${ 단 } X ${ 곱 } = ${ 단 * 곱 }`);
+    }   //for 2 end
+} 
+
+구구단 (좌표찍기, 행과 열의 좌표찍기, 바둑판)
+
+[4] 객체 호출
+    // 변수명 : 전체호출
+    // 변수명.속성명 : 특정한 속성의 자료를 호출 *.(접근/도트 연산자) 특정한 위치(속성)로 이동한다는 뜻
+    // 변수명['속성명'] :  특정한 속성의 자료를 호출 *속성명이 특수문자포함 또는 변수일때
+    // Object.keys( 객체변수 ) : 객체내 모든 속성명(key)를 배열로 반환
+    // console.log( Object.values( 변수명 ) : 객체내 모든 자료(value)를 배열로 반환
+    // console.log( Object.entries( 변수명 ) :
