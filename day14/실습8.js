@@ -190,7 +190,7 @@ let result = { '개발팀': [ ], '기획팀': [ ] }; // 빈배열(부서)2개를
 
 for( let index = 0 ; index <= team.length - 1 ; index++ ){
     let t = team[index]; //index번째 객체 호출
-    if ( t.department == '개발팀' ){ //index번째 객체으 부서가 '개발팀'
+    if ( t.department == '개발팀' ){ //index번째 객체 부서가 '개발팀'
         result.개발팀.push( t.name ); //결과객체내 개발팀 배열에 index번째 객체의 이름저장
     }else if( t.department == '기획팀'){
       result.기획팀.push( t.name );
