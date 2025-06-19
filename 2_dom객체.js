@@ -145,6 +145,31 @@ function func8(){
 
 /* 예제 9 : input 에서 입력받은 값을 전역 배열에 저장하고 배열 상태를 출력하기. */
 // (1) 목표 요소        : #itemInput, #addItemBtn, #arrayStatus
-// (2) 사용할 내장 속성/메소드 : let (전역배열), .value, .push(), .textContent
+// (2) 사용할 내장 속성/메소드 : let (전역배열), .value, .push(), .innerHTML
 // (3) 처리할 내용      : 버튼 클릭 시 input 값을 배열에 추가하고, 현재 배열의 상태를 div에 출력
-
+//1. 전역배열 : 입력받은 값들을 저장하는 전역(*함수밖에서) 배열
+let array = [];
+//2. 버튼 클릭시 실행되는 함수 정의
+function func9(){
+    console.log('--- func9 exe ----')
+//3.'itemInput'마크업 객체를 가져온다.
+const itemInput = document.querySelector('#itemInput');
+console.log( itemInput);
+//4. 마크업 객체내 value 속성값 가져온다.
+const value = itemInput.value; console.log( value );
+//5. 입력받은  value 값을 전역배역에 추가한다.
+array.push( value )    ;
+console.log( array );
+//6. (출력)'arrayStatus'마크업 객체를 가져온다.
+const arrayStatus = document.querySelector('#arrayStatus');
+//7. 배열내 모든 요소를 HTML(문자열) 형식 구성(*누적합계와 비슷)
+let html =''; //배열내 출력할 요소들을 문자로 저장할 변수
+for( let index = 0 ; index <= array.length - 1 ; index++ ){
+    const val = array[index];//index번째 입력값(요소)호출
+        console.log( val );
+    html += `<span> ${ val }, </span>`; //html 구성
+}//for end
+//8. 배열 정보를 HTML구성한 문자열을 innerHTML에 대입한다.
+    console.log( html );
+arrayStatus.innerHTML = html;
+}//f end
