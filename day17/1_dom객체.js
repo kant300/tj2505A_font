@@ -10,14 +10,24 @@
         D(document:html) O(object) M(model)
     2. 내장객체 : document
     3. 내장객체내 주요속성
-        (1) document.write('출력할내용') : HTML에 문자열(HTML)출력하는 함수
-        (2) document.querySeletor('선택자') :HTML 지정한 선택자를 JS객체로 반환하는 함수
-        (3)
+        (1) document.write('출력할내용')          : HTML에 문자열(HTML)출력하는 함수
+        (2) document.querySeletor('선택자')      :HTML 지정한 선택자를 JS객체로 반환하는 함수
+        (3)  document.querySelectorAll('선택자')  : HTML에 지정한 선택자를 모두 JS객체(배열)로 *반환* 하는 함수
         *선택자 : 마크업명 , .클래스명  , #id명
-    4. dom객체.innerHTML   
-        *<마크업> 
+    4. dom객체.innerHTML                    : 마크업(사이)내 html내용물을 호출하는 속성
+        *<마크업> !!!여기가 innerHTML 입니다. </마크업> 
+        * inner없음 : <input /> , <img /> 등등                               
     5. dom객체.value    
-        *<    
+        * <마크업 value="여기!!" / >
+        * value있음 : <input> , <select> , <textarea> 등등
+        * value없음 : <div> , <span> , <table> 등등  
+    6. dom객체.style                : 마크업내 style(css)요소 대입(기존게 사라짐) 
+    7. dom객체.style.CSS속성명 =      : 마크업내 style(css)요소 추가
+    8. dom객체.classList           : 마크업내  적용된 class들 반환
+        dom객체.classList.add('클래스명')    : 마크업내 클래스 추가
+        dom객체.classList.remove('클래스명')    : 마크업내 클래스 삭제
+        dom객체.classList.toggle('클래스명')    :마크업내 지정클래스가 없으면 추가 있으면 삭제
+        dom객체.classList.contains('클래스명') : 마크업내 지정클래스가 있는지 확인 , true / false 반환 
         
 */
 //[1]
@@ -59,4 +69,13 @@ function func2(){
     //const title = document.querySelector('.title');
     //title.innerHTML =  'JS에서 작성한것';
 }      
+//[8]
+function func3(){
+    console.log('--- func3 exe ----')
+    //1. 특정한 선택자의 마크업을 가져오기
+    const title2 = document.querySelector('.title2')
+    //2. 해당 마크업객체내 .style속성
+    title2.style = 'color : red; font-size : 8px;' //css문법 문자열로 대입
+    title2.classList.toggle('myStyle');
+}  
 
