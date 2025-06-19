@@ -125,16 +125,36 @@ const students = [
   { name: '이영희', score: 92 },
   { name: '박민준', score: 78 }
 ];
-1.매개변수 array   :함수{ }안으로 들어오는 자료를 저장하는 변수(여러개 가능)
+1.매개변수 x  :함수{ }안으로 들어오는 자료를 저장하는 변수(여러개 가능)
 2.반환값  가장 높은 점수 : 함수{ }가 종료되면서 *함수호출*했던 곳으로 반환하는 자료(하나의 값)
-3.처리할명령어 가장 높은 점수(score)를 가진 학생의 이름을 찾아   for : 함수{ }가 실행되면서 실행한 코드들
-
+3.처리할명령어  배열내 가장 높은 점수(score)를 가진 학생의 이름을 찾아   for : 함수{ }가 실행되면서 실행한 코드들
+전역변수 
+*/
 const students = [
   { name: '김철수', score: 85 },
   { name: '이영희', score: 92 },
   { name: '박민준', score: 78 }
 ];
 
+function findTopStudent( ){
+    let maxScore = 0;
+    let maxName = ''
+    //let maxObj = { name : '' , score : 0 }
+    for( let index = 0 ; index <= students.length - 1 ; index++ ) {
+        const student = students[index];
+        if( student.score > maxScore ){ //student.score > maxObj.score
+            maxScore=student.score
+            maxName=student.name
+        }
+    }//for end
+    return maxName; //가장 높은점수의 이름 maxObj.name
+}//f end
+let result2 = findTopStudent();
+console.log( result2 );
+
+
+
+/*
 function findTopStudent( array ){
     let topScore = 0;
     let topStudent = [ students.score ]
@@ -211,11 +231,11 @@ let todoList = ['장보기', '운동하기']
 2.반환값  입장료반환
 3.처리할명령어  
 
-*/
+
 function getTicketPrice( age ){
     if( age < 8 ){
         
     }
 
     }
-}
+*/
