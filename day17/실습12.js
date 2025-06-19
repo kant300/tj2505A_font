@@ -51,6 +51,8 @@ const 가계부목록 = [
     { 코드 : 1 , 날짜 : '2025-06-19' , 항목명 : '점심식사 ' , 금액 : 9000 } , 
     { 코드 : 2 , 날짜 : '2025-06-19' , 항목명 : '교통비' , 금액 : 1500 }
 ]
+let 마지막인덱스 = 가계부목록.length -1;
+let 코드자동번호 = 가계부목록[ 마지막인덱스 ].코드;//현재 초기 배열의 마지막 객체의 코드번호;
 //[3] 기능(함수단위)구현
 // 1. 등록함수 정의, 실행 : 등록버튼 onclikc했을때 -> <button onclick="등록함수()"> 등록버튼 </button>
 function 등록함수(){ console.log( '--- 등록함수 exe ----' ) // 2. 함수 onclick 확인 
@@ -64,7 +66,9 @@ const content =contentInput.value;  console.log( content );
 const money = moneyInput.value;     console.log( money);
 
 //5. 원하는 속성구성으로 객체만들기, 설계 :( 코드 : , 날짜: , 항목명: , 금액: )
-const obj = { 코드 : 3 , 날짜: date , 항목명: content , 금액: money }; console.log( obj );
+    // *코드자동번호에 1 증가 한후에 대입한다.<실무에서는 사용X>
+    코드자동번호++
+    const obj = { 코드 : 코드자동번호  , 날짜: date , 항목명: content , 금액: money }; console.log( obj );
 //6. 구성한 객체를 전역(배열)변수에 저장한다.
 가계부목록.push( obj );     console.log( 가계부목록 );
 //7. 새로고침, 출력함수 재호출
@@ -79,7 +83,7 @@ function 전체조회함수(){ console.log( '--- 전체조회함수 exe ----' );
 //3. 어디에, <tbody id="contentBody">
 const contentBody = document.querySelector('#contentBody'); console.log(contentBody);
 //4. 무엇을 배열내 객체정보 --> html 형식표현 // ***배열내 객체 1개당 <tr> 1개***
-let html ='';
+let html =``;
 for( let index = 0 ; index <= 가계부목록.length -1 ; index++ ){ //(1) 배열내 모든(for) 객체의 정보를
     const obj = 가계부목록[index]; //index번째 객체(정보)호출
     html += `<tr>
