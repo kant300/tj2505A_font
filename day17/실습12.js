@@ -25,7 +25,70 @@
 [ 작업순서 ]
     1.(프) 화면구성( HTML/CSS )
     2.(백) 데이터모델링
+        (1) 저장할 자료들을 모두 찾기
+            -> 날짜, 항목명, 금액
+        (2) 저장할 자료들의 분리(중복 배제) -> 1대 다수의 관계/참조
+        (3) 분리된 자료들끼리 연관관계 X
+            *테이블(배열), 테이블 내 행/가로 단위(객체)
     3.(벡) 함수(기능)설계
+        (1) '등록' 함수 
+            함수명 :    (아무거나) '등록함수'
+            매개변수 :   x      ,   반환값 :   x
+            로직 :     1. input으로부터 입력받은 값 가져오기 
+                       2. 입력값 3개를 객체{} 로 구성 
+                       3. 구성된 객체를 가계부목록(배열)에 저장 
+            실행조건 : '등록버튼' 클릭(onclick) 했을때
+        (2) '전체조회' 함수 
+            함수명 :    '전체조회함수'
+            매개변수 : x        ,    반환값 : x
+            로직 :   1. 특정한 구역(table)에 배열내 모든 정보를 HTML 형식으로 출력한다.
+            실행조건 : 1.페이지 열렸을때(최초1번)  2. 등록 성공했을때(새로고침)    
     4.(백) 로직
     5.(프/백) 화면 <----> 기능연동
 */
+//[2] 데이터모델링
+const 가계부목록 = [  
+    { 코드 : 1 , 날짜 : '2025-06-19' , 항목명 : '점심식사 ' , 금액 : 9000 } , 
+    { 코드 : 2 , 날짜 : '2025-06-19' , 항목명 : '교통비' , 금액 : 1500 }
+]
+//[3] 기능(함수단위)구현
+// 1. 등록함수 정의, 실행 : 등록버튼 onclikc했을때 -> <button onclick="등록함수()"> 등록버튼 </button>
+function 등록함수(){ console.log( '--- 등록함수 exe ----' ) // 2. 함수 onclick 확인 
+// 3. input에 마크업 객체 3개를 각각 가져오기
+const dateInput = document.querySelector('#dateInput');     console.log(dateInput);
+const contentInput = document.querySelector('#contentInput');   console.log(contentInput);
+const moneyInput = document.querySelector('#moneyInput');   console.log(moneyInput);
+//4. 각 마크업 객체에서 입력값 가져오기
+const date = dateInput.value;    console.log( date );
+const content =contentInput.value;  console.log( content );
+const money = moneyInput.value;     console.log( money);
+
+//5. 원하는 속성구성으로 객체만들기, 설계 :( 코드 : , 날짜: , 항목명: , 금액: )
+const obj = { 코드 : 3 , 날짜: date , 항목명: content , 금액: money }; console.log( obj );
+//6. 구성한 객체를 전역(배열)변수에 저장한다.
+가계부목록.push( obj );     console.log( 가계부목록 );
+//7. 새로고침, 출력함수 재호출
+전체조회함수();
+
+}//f end
+
+// 전체조회함수 , 실행조건 : 1. JS열렸을때(최초1번) 2. 등록성공했을때
+전체조회함수(); //JS가 그냥 1번 출력함수 호출한다.
+function 전체조회함수(){ console.log( '--- 전체조회함수 exe ----' );
+//***배열내 객체1개당 <tr> 1개***
+//3. 어디에, <tbody id="contentBody">
+const contentBody = document.querySelector('#contentBody'); console.log(contentBody);
+//4. 무엇을 배열내 객체정보 --> html 형식표현 // ***배열내 객체 1개당 <tr> 1개***
+let html ='';
+for( let index = 0 ; index <= 가계부목록.length -1 ; index++ ){ //(1) 배열내 모든(for) 객체의 정보를
+    const obj = 가계부목록[index]; //index번째 객체(정보)호출
+    html += `<tr>
+                <td> ${ obj.날짜 }</td>
+                <td> ${ obj.항목명 }</td>
+                <td> ${ obj.금액 }</td>
+            </tr>`// !!!!백틱 주의 !!!!
+}//for end
+//5. 출력, innerHTML
+contentBody.innerHTML = html; //반복문 이용하여 객체를 HTML 형식으로 표현한 누적 HTML를 대입한다.
+
+}   //f end
