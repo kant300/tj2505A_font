@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    <div id="wrap"><!--전체 구역-->
+        <h3> 인사 관리 대시보드 </h3>
+        <h5> 부서, 사원, 휴가 통합 관리 시스템 </h5>
+        <h4> 부서 관리 </h4> 
+        <div> <!--부서 관리-->
+            <div><!--등록 영역-->
+                <input type="text" placeholder="신규 부서명 입력" /><button> 추가 </button>
+            </div>
+            <div><!--출력 영역-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>부서명</th> <th>관리</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 개발팀 </td>
+                            <td><button class="btnEdit">수정</button>
+                            <button class="btnDelete">삭제</button></td>
+                        </tr>
+                        <tr>    
+                            <td> 디자인팀 </td>
+                            <td><button class="btnEdit">수정</button>
+                            <button class="btnDelete">삭제</button></td>
+                        </tr>
+                        <tr>    
+                            <td> 기획팀 </td>
+                            <td><button class="btnEdit">수정</button>
+                            <button class="btnDelete">삭제</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <h4> 사원 등록 </h4>
+        <div><!--사원 관리-->
+            <div><!--등록 영역-->
+                이름 <br /><input type="text" /> <br />
+                직급 <br /><input type="text" /> <br />
+                부서 <br />
+                <select>
+                    <option> 부서를 선택하세요 </option>
+                    <option> 개발팀 </option>
+                    <option> 디자인팀 </option>
+                    <option> 기획팀 </option>
+                </select> <br />
+                사진 <br /><input type="file" accept="image/*" /><button>등록</button>
+            </div>
+            <h4> 사원 전체 목록 </h4>
+            <div><!--출력 영역-->
+            <table>
+                <thead>
+                    <tr>
+                        <td>사진</td> <td>이름</td> <td>부서</td>
+                        <td>직급</td> <td>관리</td> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://placehold.co/50x70" /></td>
+                        <td>박옥선</td>
+                        <td>개발팀</td>
+                        <td>선임개발자</td>
+                        <td><button class="btnEdit">수정</button>
+                        <button class="btnDelete">삭제</button></td> 
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/50x70" /></td>
+                        <td>이영지</td>
+                        <td>디자인팀</td>
+                        <td>수석디자이너</td>
+                        <td><button class="btnEdit">수정</button>
+                        <button class="btnDelete">삭제</button></td> 
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/50x70" /></td>
+                        <td>안유진</td>
+                        <td>기획팀</td>
+                        <td>팀장</td>
+                        <td><button class="btnEdit">수정</button>
+                        <button class="btnDelete">삭제</button></td> 
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/50x70" /></td>
+                        <td>윤남노</td>
+                        <td>개발팀</td>
+                        <td>대리</td>
+                        <td><button class="btnEdit">수정</button>
+                        <button class="btnDelete">삭제</button></td> 
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <h4> 휴가 관리 신청 </h4>
+        <div><!--휴가 관리-->
+            <div><!--등록 영역-->
+                신청사원 <br />
+                <select>
+                    <option>휴가 신청 사원을 선택하세요 </option>
+                    <option> 박옥선 </option>
+                    <option> 이영지 </option>
+                    <option> 안유진 </option>
+                    <option> 윤남노 </option>
+                </select> <br />
+                휴가 시작일 <input type="date" />
+                휴가 종료일 <input type="date" /><br />
+                휴가사유 <input type="text" placeholder="예: 여름 휴가" /><br />
+                <button>신청</button>
+            </div>
+            <h4> 휴가 신청 전체 목록 </h4>
+            <div><!--출력 영역-->
+                박옥선 <button>신청취소</button><br />
+                <span>2025-06-10~2025-06-17</span>
+                사유: 여름휴가
+            </div>
+        </div>
+    </div><!--전체 구역 end-->
+    
+
+     <script src='2_실습15.js'></script>
+</body>
+
+
+
+</html>
