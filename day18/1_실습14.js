@@ -96,8 +96,8 @@ function productAdd(){ console.log(' >> productAdd exe');
     //* 현재 날짜 구하기 == new Date()객체
     let year = new Date().getFullYear(); //현재 연도 반환함수
     let month = new Date().getMonth()+1; // 현재 월 반환함수 *1월달이 0부터 시작함으로 +1
-        month = month < 9 ? month : `0${ month }`: month;  //만약에 월이 한자리수이면 앞에 '0' 붙인다
-    let day = new Date.getDate();   //현재 일 반환함수
+        month = month < 9 ? `0${ month }`: month;  //만약에 월이 한자리수이면 앞에 '0' 붙인다
+    let day = new Date().getDate();   //현재 일 반환함수
         day = day <9 ? `0${ day }`: day; //만약에 일이 한자리수이면 앞에 '0' 붙인다
     let pdate = `${ year }-${ month }-${day}`;//`백틱주의   
     console.log( pdate );
@@ -122,16 +122,63 @@ function productAdd(){ console.log(' >> productAdd exe');
     pnameInput.value = '';
     ppriceInput.value = '';
     alert('[성공] 제품 등록');
-
+    productPrint();
 }//f end 등록함수 끝
 
 //3. 제품목록 출력함수, 실행조건 : (1) 페이지(HTML/JS)가 열렸을때 함수실행, (2) 등록/삭제/수정 처리했을때
 productPrint();
 function productPrint(){ console.log(' >> productPrint exe')
-    //(1) 어디에
+    //(1) 어디에, <tbody>
+    const tbody = document.querySelector(`#main > table > tbody` ); console.log(tbody);
     //(2) 무엇을
+    let html = '';
+        for( let index = 0 ; index <= productList.length -1 ; index++ ){
+            const product = productList[index];
+            html += `<tr>
+                        <td><img src="${ product.pimg }" /></td>
+                        <td> ${ product.cno } </td> 
+                        <td> ${ product.pname } </td>
+                        <td> ${ product.pprice.toLocaleString() } </td> 
+                        <td> ${ product.pdate } </td> 
+                        <td><button onclick="productDelete( ${ product.pno } )" class="btnDelete">삭제</button>
+                        <button onclick="productEdit( ${ product.pno } )" class="btnEdit">수정</button></td>
+                    </tr>`; //백틱주의,  샘플작성한 HTML의 <tr> 복붙
+        }; //for end
     //(3) 출력
-}//f end
-//4. 제품 삭제함수 :
+    tbody.innerHTML = html;
+}//f end 출력함수끝
 
-//5. 제품 수정함수 :
+//4. 제품 삭제함수 : 배열내 삭제할 객체를 찾아서 .splice <매개변수 : 제품코드> , 
+// 실행조건 :[삭제버튼] onclick 했을때
+function productDelete( pno ){ console.log( ' >> productDelete exe'); console.log( pno );
+    //(1) 삭제할 번호의 객체를 찾는다. for
+    for( let index = 0 ; index <= productList.length - 1 ; index++ ){
+        if( productList[index].pno == pno ){//만약에 index번째 제품코드의 삭제할 제품코드가 같으면
+            productList.splice( index, 1 ); // 해당 index에서 요소1개 삭제
+            alert('[성공] 제품 삭제'); //안내
+            productPrint(); //삭제이후 제품목록 새로고침/랜더링
+            return; // 목표이뤘으니 함수종료한다.
+        }
+    }// for end
+    //(2) 못찾았다.
+    alert('[오류] 제품번호 불일치 ');
+}//f end  삭제함수 끝
+
+//5. 제품 수정함수 : 새로운 정보를 받아 배열내 수정할 객체를 찾아서 대입한다. <매개변수 : 제품코드> ,
+// 실행조건 :[수정버튼] onclick 했을때
+function productEdit( pno ) { console.log(' >> productEdit exe'); console.log( pno );
+    //(1) 수정할 번호의 객체를 찾느다. for
+    for( let index = 0 ; index <= productList.length -1 ; index++ ){//(1)수정할 번호의 객체를 찾는다
+        if( productList[index].pno == pno ){ //만약에 index번째 제품코드가 수정할 제품코드와 같다면
+            const pname = prompt('수정할 제품명 : ');//수정할 값 입력받기
+            const pprice = prompt('수정할 제품가격 : ');
+            productList[index].pname = pname; //입력받은 값으로 수정
+            productList[index].pprice = Number( pprice );
+            alert('[성공] 제품 수정'); //안내
+            productPrint(); //제품목록 새로고침
+            return; //목표를 이뤘으니 함수 강제 종료한다.
+        } //if end
+    }// for end
+    //(2)
+    alert ('[실패] 제품 수정');
+}// f end 수정함수 끝
