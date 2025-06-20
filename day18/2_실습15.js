@@ -52,4 +52,55 @@
     휴가 관리 기능:
         신청: 휴가 정보를 입력하고 "신청" 버튼 클릭 시, 휴가 신청 목록에 즉시 추가되어야 합니다.
         취소: "신청취소" 버튼 클릭 시, 해당 휴가 신청 내역이 목록에서 제거되어야 합니다.
+ 
+[ 작업순서 ] --- 100% 예측 불가능 ---
+    1. [프] 화면스케치(프로토타입)
+    2. [프] HTML과 CSS표현
+    3. [백] 데이터모델링
+    4. [백] 기능(함수)설계
+    5. [백] 구현/로직
+    6. [백] 테스트
+    
+    
         */
+//===== [1] 데이터 모델링 샘플 ====== //
+//1. 부서 목록 
+const departmentList = [
+    { dno : 1 , dname : '개발팀'} , 
+    { dno : 2 , dname : '디자인팀'} , 
+    { dno : 3 , dname : '기획팀'} ];
+let curruntDno = 3 ; //*코드를 자동대입하기 위한 현재 코드번호 , 샘플의 마지막 코드의 번호로 초기화
+//2. 사원목록 ,이미지 등록시 없을경우 : https://placehold.co/50x70 경로샘플
+const staffList = [
+    { sno : 1 , dno : 1 , sname : '박옥선' , sposition : '선임개발자' , simg :'https://placehold.co/50x70' },
+    { sno : 2 , dno : 2 , sname : '이영지' , sposition : '수석디자이너' , simg :'https://placehold.co/50x70' },
+    { sno : 3 , dno : 3 , sname : '안유진' , sposition : '팀장' , simg :'https://placehold.co/50x70' },
+    { sno : 4 , dno : 1 , sname : '윤남노' , sposition : '대리' , simg :'https://placehold.co/50x70' },
+];
+let curruntSno = 4 ;
+console.log(departmentList);
+console.log(staffList);
+
+//===== [2] 데이터 모델림 샘플 ===== //
+//1. 부서목록 출력함수 : 부서목록의 객체정보를 추가하는 함수 : 실행조건 : 추가했을때 실행
+departmentPrint();
+function departmentPrint(){ console.log( '>> departmentPrint exe' )
+    //1. 어디에 , <tbody>
+    const deaprtmentbody = document.querySelector(`#departmentbody` ); 
+    //2. 무엇을
+    let html = '';
+        for( let index = 0 ; index <= departmentList.length - 1 ; index++ ){
+            const department = departmentList[index];
+            // 현재 부서명의 저장된 카테고리번호로 카테고리객체 구하기
+        html += `<tr>
+                    <td> ${ department.dname } </td>
+                    <td><button onclick="departmentEdit( ${ department.sno } )" class="btnEdit">수정</button>
+                    <button onclick="departmentDelete( ${ department.sno } )" class="btnDelete">삭제</button></td> 
+                </tr>`; //백틱주의,  샘플작성한 HTML의 <tr> 복붙
+        }//for end
+    //3. 출력
+     deaprtmentbody.innerHTML = html;   console.log(html);
+}//f end
+// 2. 사원 등록함수 : 실행조건 : <등록번튼> onclick 클릭했을때
+//HTML : <button onclick="departmentAdd()" class="btnAdd"> 등록 </button>
+function depatr

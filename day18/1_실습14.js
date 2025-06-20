@@ -41,10 +41,10 @@
         */
 
     //===== [1] 데이터 모델링 샘플 ====== //
-    //1. 카테고리 목록
+    //1. 카테고리 목록 - (부서)
     const categoryList = [ { cno : 1 , cname : '음료류'} , { cno : 2 , cname : '과자류'} ];
     let curruntCno = 2; //*코드를 자동대입하기 위한 현재 코드번호 , 샘플의 마지막 코드의 번호로 초기화
-    //2. 제품목록 , 이미지 등록시 없을경우 : https://placehold.co/100x100 경로샘플
+    //2. (사원) - 제품목록 , 이미지 등록시 없을경우 : https://placehold.co/100x100 경로샘플
     const productList = [
         { pno : 1 , cno : 1 , pname : '코카콜라' , pprice : 1000 , pimg :'https://placehold.co/100x100' , pdate : '2025-06-17'},
         { pno : 2 , cno : 2 , pname : '새우깡' , pprice : 1200 , pimg :'https://placehold.co/100x100' , pdate : '2025-06-18'},

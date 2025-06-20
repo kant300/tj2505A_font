@@ -23,7 +23,7 @@
                             <th>부서명</th> <th>관리</th> 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="departmentbody">
                         <tr>
                             <td> 개발팀 </td>
                             <td><button class="btnEdit">수정</button>
@@ -51,16 +51,16 @@
                 이름 <br /><input type="text" /> <br />
                 직급 <br /><input type="text" /> <br />
                 부서 <br />
-                <select>
-                    <option> 부서를 선택하세요 </option>
-                    <option> 개발팀 </option>
-                    <option> 디자인팀 </option>
-                    <option> 기획팀 </option>
+                <select id="categoryInput">
+                    <option value="disabled selected"> 부서를 선택하세요 </option>
+                    <option value="1"> 개발팀 </option>
+                    <option value="2"> 디자인팀 </option>
+                    <option value="3"> 기획팀 </option>
                 </select> <br />
-                사진 <br /><input type="file" accept="image/*" /><button>등록</button>
+                사진 <br /><input type="file" accept="image/*" /><button onclick="departmentAdd()" class="btnAdd"> 등록 </button>
             </div>
             <h4> 사원 전체 목록 </h4>
-            <div><!--출력 영역-->
+            <div id="main"><!--출력 영역-->
             <table>
                 <thead>
                     <tr>
