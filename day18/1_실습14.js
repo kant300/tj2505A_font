@@ -53,4 +53,85 @@
     let curruntPno = 3;
     console.log( categoryList);
     console.log( productList );
+
+//===== [2] 데이터 모델림 샘플 ===== //
+//1. 카테고리 출력함수 : 카테고리목록의 객체정보를 <select>에 출력하는 함수 : 실행조건 : 페이지가 열렸을때 실행
+categoryPrint(); //아무런 조건없이 열릴때
+function categoryPrint(){ console.log( ' >> categoryPrint exe');
+    // 1. 어디에 , <select id="categoryInput">
+    const categoryInput = document.querySelector('#categoryInput'); console.log( categoryInput);
+    // 2. 무엇을 , 카테고리목록(배열)내 객체정보를 하나씩HTML 형식으로
+    let html = `<option value="disabled selected"> 카테고리 선택하세요. </option>`;
+        for( let index = 0 ; index <= categoryList.length - 1 ; index++ ){ //index번째 카테고리(1개) 객체꺼내기
+            const category = categoryList[index];  console.log(category);
+            html += `<option value="${ category.cno }"> ${ category.cname } </option>`
+            // 주의할점 : `백틱 주의
+        }//for end
     
+    // 3. 출력
+    categoryInput.innerHTML = html;     console.log(html);
+}//f end
+//2. 제품 등록함수 : 실행조건 : <등록번튼> onclick 클릭했을때
+//HTML : <button onclick="productAdd()" class="btnAdd"> 등록 </button>
+function productAdd(){ console.log(' >> productAdd exe');
+    //(1) 입력 마크업객체 가져오기
+    const categoryInput = document.querySelector('#categoryInput'); console.log( categoryInput);
+    const pnameInput = document.querySelector('#pnameInput'); console.log( pnameInput );
+    const ppriceInput = document.querySelector( '#ppriceInput'); console.log( ppriceInput );
+    const pimgInput = document.querySelector('#pimgInput'); console.log( pimgInput );
+
+    //(2) 입력 마크업객체에서 입력값 가져오기
+    const cno = categoryInput.value; console.log( cno );
+    const pname = pnameInput.value; console.log( pname );
+    const pprice = ppriceInput.value; console.log( pprice );
+    //(*)유효성검사
+        // * 입력한 값이 없으면 등록실패
+        if( cno == '' || pname == '' || pprice == "" ){
+            alert( '비어있는 항목이 있습니다.[실패]' );
+            return; // 
+        } 
+    //첨부파일은 value대신에 files[0] : 선택된 첨부파일의 첫번째 파일객체 가져오기
+    const pimg = pimgInput.files[0];
+    
+    //* 현재 날짜 구하기 == new Date()객체
+    let year = new Date().getFullYear(); //현재 연도 반환함수
+    let month = new Date().getMonth()+1; // 현재 월 반환함수 *1월달이 0부터 시작함으로 +1
+        month = month < 9 ? month : `0${ month }`: month;  //만약에 월이 한자리수이면 앞에 '0' 붙인다
+    let day = new Date.getDate();   //현재 일 반환함수
+        day = day <9 ? `0${ day }`: day; //만약에 일이 한자리수이면 앞에 '0' 붙인다
+    let pdate = `${ year }-${ month }-${day}`;//`백틱주의   
+    console.log( pdate );
+    //(*)유효성검사
+        // * 입력한 값이 없으면 등록실패
+        if( cno == '' || pname == '' || pprice == "" ){
+            alert( '비어있는 항목이 있습니다.[실패]' );
+            return; // 반환값 없는 함수종료 : 아래코드는 실행되지 않는다.
+        } 
+    //(3) 여러 데이터 객체로 구성 하기.
+    const obj = {
+        pno : ++curruntPno, //현재제품코드에 1증가후 구성
+        cno : Number( cno ),
+        pname : pname , pprice : Number(pprice) , //제품가격은 숫자형 타입변환
+        pimg : pimg ? URL.createObjectURL( pimg ) : 'https://placehold.co/100x100', //URL.createObjectURL() 
+        pdate : pdate
+    };  console.log( obj );
+    //(4) 구성한 객체를 배열에 저장
+    productList.push( obj );    console.log( productList);
+    // (*) 기타등등 
+    categoryInput.value = '';
+    pnameInput.value = '';
+    ppriceInput.value = '';
+    alert('[성공] 제품 등록');
+
+}//f end 등록함수 끝
+
+//3. 제품목록 출력함수, 실행조건 : (1) 페이지(HTML/JS)가 열렸을때 함수실행, (2) 등록/삭제/수정 처리했을때
+productPrint();
+function productPrint(){ console.log(' >> productPrint exe')
+    //(1) 어디에
+    //(2) 무엇을
+    //(3) 출력
+}//f end
+//4. 제품 삭제함수 :
+
+//5. 제품 수정함수 :

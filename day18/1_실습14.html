@@ -119,14 +119,14 @@
     <div id="wrap"> <!--전체 구역-->
         <div id="header"><!--등록 영역-->
             <select id="categoryInput">
-                <option value="disabled checked"> 카테고리 선택하세요. </option>
+                <option value="disabled selected"> 카테고리 선택하세요. </option>
                 <option value="1"> 음료 </option>
                 <option value="2"> 과자 </option>
             </select>
             <input id="pnameInput" type="text" placeholder="제품명" />
             <input id="ppriceInput" type="number" placeholder="제품가격" />
             <input id="pimgInput" type="file" accept="image/*" />
-            <button class="btnAdd"> 등록 </button>
+            <button onclick="productAdd()" class="btnAdd"> 등록 </button>
         </div>
         <div id="main"> <!--출력 영역-->
             <table>
