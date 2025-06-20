@@ -258,3 +258,25 @@
 
 - 변수는 하나의 자료 저장 : let 변수명 = 자료;
 - 함수는 
+[ DOM 객체 ] : document(HTML) object(객체) model(표준)
+    1. 정의 : 문서객체표준 , HTML 마크업들을 객체처럼 다루기 *객체는 속성(property)과 함수(function)포함
+    2. 내장객체 : document
+    3. 주요속성과 함수
+        (1)document.querySelector('선택자');    : HTML 마크업 객체 반환 함수, 반환값 : 객체1개
+        (2)document.querySelectorAll('선택자');     : HTML 마크업 객체 반환 함수, 반환값 : 배열1개(객체 여러개)
+            * 선택자는(CSS와 동일) 1. 마크업명  2. .클래스명   3. #id명  ,  >
+        (3) (마크업객체).innerHTML          : <마크업>과 **여기** </마크업>사이에 HTML문자열대입
+            사용불가능한 마크업 : 혼자열고 혼자 닫는 마크업들
+            document.querySelectorAll('선택자').innerHTML
+        (4) (마크업객체).value          : <마크업 value="**여기**' />에 자료 대입/호출
+            사용가능 마크업 : <input /> , < select > , <textarea>
+        (5) (마크업객체).style          : <마크업 style="**여기**' />에 css문법 대입/호출
+        (6) (마크업객체).src            : <마크업 src="**여기**' />에 파일 경로 대입/호출
+        (7)(마크업객체).classList
+           (마크업객체).classList.add('클래스명')       : 지정 마크업에 클래스 추가
+           (마크업객체).classList.remove('클래스명')    : 지정 마크업에 클래스 삭제
+           (마크업객체).classList.toggle('클래스명')    : 지정 마크업에 클래스 추가 혹은 (존재하면) 삭제
+           (마크업객체).classList.contains('클래스명')  : 지정 마크업에 클래스 존재여부 true/false 반환값
+        (8)(마크업객체).remove()           
+
+
