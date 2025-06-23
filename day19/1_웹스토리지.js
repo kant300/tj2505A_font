@@ -3,13 +3,12 @@
     -웹브라우저(개발자도구 F12) -> [application]탭 -> 왼쪽사이드 메뉴( local/session )
     -도메인( http://127.0.0.1:5500 , http://www.naver.com )마다 웹스토리지가 할당된다.
     1. 종류
-        (1) sessionStorage  : 브라우저가 실행동안만 저장, 브라우저를 닫으면 (자동)데이터 사라진다.
+        (1) sessionStorage  : 브라우저가 실행 동안만 저장, 브라우저를 닫으면 (자동)데이터 사라진다.
             - 일회성 정보 , 이전페이지기록
         (2) localStorage    : 사용자가 직접 삭제하거나 브라우저(캐시)청소 하지 않는 한 데이커 영구 저장한다.
             - 설정 정보 , 팝업창(다시보지않기) , 테마 , 자동로그인 등등
     2. 사용법
-        sessionStorage 객체
-        localStorage 객체
+        sessionStorage 객체 , localStorage 객체
         (1) sessionStorage.setItem( '속성명/key' , 값/value );
         (2) sessionStorage.getItem( '속성명/key' );
         (3) sessionStorage.removeItem( '속성명/key' );
@@ -47,12 +46,12 @@ console.log( localStorage.getItem( 'phone' ) );     // null 존재하지 않는 
 
 // [4] 웹스토리지에 자료 삭제
 sessionStorage.removeItem( 'name' ); //name속성 삭제
-console.log( sessionStorage ); // 유재석이 없음
+console.log( sessionStorage ); // 유재석이 없어짐
 localStorage.clear();       //전체삭제
-console.log( localStorage );    //모든 속성 삭제
+console.log( localStorage );    // 40 없어짐
 
 // [5] 웹스토리지에 JSON 객체 저장
-//sessionStorage.setItem( m1 , ['유재석' , 40 ] )   x안된다.
+//sessionStorage.setItem( m1 , ['유재석' , 40 ] )   x안된다. 대괄호 포함하지 않음
 sessionStorage.setItem( 'm1' , JSON.stringify( ['유재석' , 40 ] ) ); // o 대괄호 포함 한 저장
 localStorage.setItem( 'm2' , JSON.stringify( { name : '유재석' , age : 40 } ) );
 
