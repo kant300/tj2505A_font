@@ -52,7 +52,7 @@ function signup(){ console.log( '--> signup exe');
     let no = 1;  //회원번호 초기값
         // ======= sessionStorage 에서 memberList 가져오기 ========
         // (1) sessionStorage에서 memberList 가져오기
-        let memberList = sessionStorage.getItem('memberList'); //.getItem(' ')
+        let memberList = sessionStorage.getItem('memberList'); //.getItem('속성명/key')
         // (2) 존재하지 않으면 (배열) 새로 생성, 존재하면 타입변환
         if( memberList == null ){ // 해당 속성명(memberList)이 존재하지 않으면
             memberList = []; //새로운 배열생성
@@ -98,7 +98,6 @@ function login(){ console.log( '--> login exe');
             return; // 강제 함수(반복문) 종료
         } // if end 
     }  //for end 
-    // 4. 못찾았다.
     alert('로그인 실패');
 } //f end
 
