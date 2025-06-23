@@ -73,6 +73,7 @@ function categoryPrint(){ console.log( ' >> categoryPrint exe');
 }//f end
 //2. 제품 등록함수 : 실행조건 : <등록번튼> onclick 클릭했을때
 //HTML : <button onclick="productAdd()" class="btnAdd"> 등록 </button>
+
 function productAdd(){ console.log(' >> productAdd exe');
     //(1) 입력 마크업객체 가져오기
     const categoryInput = document.querySelector('#categoryInput'); console.log( categoryInput);
