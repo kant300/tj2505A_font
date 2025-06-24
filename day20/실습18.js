@@ -1,4 +1,4 @@
-// // 2. 제품 목록 , 이미지 등록시 없을경우 : https://placehold.co/100x100 경로 샘플
+// // // 2. 제품 목록 , 이미지 등록시 없을경우 : https://placehold.co/100x100 경로 샘플
 // const productList = [
 //     { pno: 1, pname: '아메리카노', pprice: 1000, pimg: 'https://placehold.co/100x100', etc: '....' },
 //     { pno: 2, pname: '바닐라라떼', pprice: 1200, pimg: 'https://placehold.co/100x100', etc: '....' },
@@ -9,9 +9,22 @@
 //     { lno: 1, pno: 1, lstate: '입고', lcount: 3, lcontent: '...', ldate: '2025-06-24'},
 //     { lno: 2, pno: 1, lstate: '출고', lcount: -1, lcontent: '...', ldate: '2025-06-24'},
 // ];
-// let curretlno = 2;
+//  let curretlno = 2;
 
+// ==================== 3. localStorage 관리하는 함수 ================= //
+function setLocalStorage( productList ){
+    localStorage.setItem('productList' , JSON.stringify(productList) );
+} // func end 
 
+function getLocalStorage(){
+    let productList = localStorage.getItem('productList');
+    if( productList == null ){
+        productList = []
+    }else{
+        productList = JSON.parse(productList)
+    }
+    return productList; // 웹스토리지 에서 조회된 배열을 반환하는 함수, 없으면 []빈배열 , 있으면 [{},{}]
+}
 // 2. 제품 등록함수 :
 //2. 실행조건 : 등록버튼 onclick 클릭했을때
 function productAdd(){ console.log( '--> productAdd exe' );
@@ -33,20 +46,32 @@ function productAdd(){ console.log( '--> productAdd exe' );
         return; // 반환값 없는 함수종료 : 아래코드는 실행되지 않는다.
     }
 
-    //localStorage 저장함수
+    //localStorage 저장함수   .getItem('속성명/key')
     let currentPno = 1; // 제품번호 초기값 
-        // ============== sessionStorage 에서 productList 가져오기 ============ //
-        // (1) sessionStorage 에서 productList 가져오기
-        let productList = sessionStorage.getItem('productList'); // .getItem('속성명/key')
-        // (2) 존재하지 않으면 (배열) 새로 생성 , 존재하면 타입변환
-        if( productList == null ){ // 해당 속성명(productList)이 존재 하지 않으면 
-            productList = []; // 새로운 배열 생성 
-            // no(제품번호)  1 사용한다.
-        }else{ // 존재하면 JSON(배열타입)으로 변환하기. 
-            productList = JSON.parse( productList );
-            currentPno = productList[ productList.length-1 ].pno + 1; // 배열내 마지막인덱스의 제품번호 + 1
-        }
-
+    let productList = getLocalStorage();
+        // // ============== localStorage 에서 productList 가져오기 ============ //
+        // // (1) localStorage 에서 productList 가져오기
+        // let productList = localStorage.getItem('productList'); // .getItem('속성명/key')
+        // // (2) 존재하지 않으면 (배열) 새로 생성 , 존재하면 타입변환
+        // if( productList == null ){ // 해당 속성명(productList)이 존재 하지 않으면 
+        //     productList = []; // 새로운 배열 생성 
+        //     // no(제품번호)  1 사용한다.
+        // }else{ // 존재하면 JSON(배열타입)으로 변환하기. 
+        //     productList = JSON.parse( productList );
+        //     currentPno = productList[ productList.length-1 ].pno + 1; // 배열내 마지막인덱스의 제품번호 + 1
+        // }
+//     function setLocalStorage( productList ){
+//     localStorage.setItem('productList' , JSON.stringify(productList) );
+// } // func end 
+// //      function getLocalStorage(){
+// //      let productList = localStorage.getItem('productList');
+// //      if( productList == null ){
+// //          productList = []
+// //      }else{
+// //         productList = JSON.parse(productList)
+// //      }
+// //      return productList; // 웹스토리지 에서 조회된 배열을 반환하는 함수, 없으면 []빈배열 , 있으면 [{},{}]
+// // }
 
     // 3. 객체화
     const obj = {
@@ -66,12 +91,12 @@ function productAdd(){ console.log( '--> productAdd exe' );
     ptextInput.value = '';
     alert('[성공] 제품 등록 ');
 
-    // ============== sessionStorage 에서 memberList 저장하기 ============ //
+    // ============== localStorage 에서 productList 저장하기 ============ //
         // (1) 배열타입을 JSON문자열 타입으로 변환
-        let jsonData = JSON.stringify( productList );
-        // (2) sessionStorage 에 memberList 속성명으로 배열저장하기.
-        sessionStorage.setItem( 'productList' , jsonData ); // 'memberList' 라는 이름(아무거나) 으로 jsonData변수값 저장
-
+    //     let jsonData = JSON.stringify( productList );
+    //     // (2) localStorage 에 productList 속성명으로 배열저장하기.
+    //    localStorage.setItem( 'productList' , jsonData ); // 'productList' 라는 이름(아무거나) 으로 jsonData변수값 저장
+setLocalStorage(productList);
     ViewAllProduct();
 }//f end
 
@@ -83,7 +108,7 @@ function ViewAllProduct() {
     console.log(ViewAllProduct);
     // (1) 어디에
     const tbody = document.querySelector('#main > table > tbody');
-
+let productList = getLocalStorage();
     // (2) 무엇을
     let html = '';
     for (let i = 0; i < productList.length; i++) {
@@ -220,8 +245,3 @@ function btnEdit(lno){
 } // func end
 
 
-//  localStorage 저장 함수 구현
-// function func1(){ console,log('--> func1 exe');
-//     const product
-
-// }

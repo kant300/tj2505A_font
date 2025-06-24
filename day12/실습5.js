@@ -17,7 +17,7 @@ if( fruitList.indexOf (fruitName) == -1 ){  // 존재하지 않는다.
     console.log( fruitList); 
 }
 else{ console.log( '이미 존재하는 과일입니다.') } // 그외존재한다.
-console.log()
+
 
 
 
@@ -32,7 +32,7 @@ console.log()
 //console.log( '1234567890123 ')
 // (2) 위치는 1부터, 인덱스는 0부터,  7번째 숫자 --> 6번 인덱스 뜻
 
-console.log( '1234567890123 ' [7] ) 
+console.log( '1234567890123 ' [7] ) // 문자열 '1234567890123 '에서 인덱스 7에 해당하는 문자(8번째 문자)를 콘솔에 출력
 let  ssn = prompt( '주민등록번호 : ');
 if( ssn[6] == '2' || ssn[6] == '4' ){console.log( 'red'); }
 else{ console.log('blue'); }
