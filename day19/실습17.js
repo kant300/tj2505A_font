@@ -89,7 +89,7 @@ const phone = phoneNumber.value;
     for( let index = 0 ; index <= waitingList.length - 1 ; index++ ){
         const phoneInput = waitingList[index]; // index번째 대기명단(객체)
         if ( phoneInput.phone == phone){
-            //마약에 index번째 전화번호가 입력한 전환번호와 같으면
+            //만약에 index번째 전화번호가 입력한 전환번호와 같으면
             alert(`고객님의 대기번호는 ${ waitingList[index].no }번 입니다.`);
             return; // 강제 함수(반복문) 종료
         }// if end 
