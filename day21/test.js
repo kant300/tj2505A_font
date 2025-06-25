@@ -13,6 +13,7 @@ function getProducts() {
     }
     // 처리된 products 배열을 반환합니다.
     return products;
+    
 }
 
 // 주어진 products 배열을 로컬 스토리지에 저장하는 함수

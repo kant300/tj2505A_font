@@ -62,7 +62,7 @@ function productAdd(){ console.log( '--> productAdd exe' );
         // }
 //     function setLocalStorage( productList ){
 //     localStorage.setItem('productList' , JSON.stringify(productList) );
-// } // func end 
+//  } // func end 
 // //      function getLocalStorage(){
 // //      let productList = localStorage.getItem('productList');
 // //      if( productList == null ){
