@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단 제품 관리 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h2>새 제품 등록</h2>
+            <div class="input-group">
+                <input id="pnameInput" type="text" placeholder="제품명" />
+                <input id="ppriceInput" type="number" placeholder="제품가격" />
+            </div>
+            <textarea id="pcontentInput" placeholder="간단한 설명"></textarea>
+            <div class="input-group">
+                <input id="pimgInput" type="file" accept="image/*" />
+                <button id="addUpdateBtn" class="btn primary"> 등록 </button>
+            </div>
+        </div>
+
+        <div id="main">
+            <h2>제품 목록</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th> 이미지 </th>
+                        <th> 상품명 </th>
+                        <th> 가격 </th>
+                        <th> 설명 </th>
+                        <th> 비고 </th>
+                    </tr>
+                </thead>
+                <tbody id="productBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="test_2.js"></script>
+</body>
+</html>

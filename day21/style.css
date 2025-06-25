@@ -1,0 +1,177 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단 정렬 */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#wrap {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header (제품 등록 폼) 스타일 */
+#header {
+    padding: 25px;
+    background-color: #eaf2f8;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+#header h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#header input[type="text"],
+#header input[type="number"],
+#header textarea {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+#header input[type="text"]:focus,
+#header input[type="number"]:focus,
+#header textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#header textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+#header input[type="file"] {
+    flex-grow: 1;
+    padding: 8px 0; /* 파일 인풋은 패딩이 다르게 적용될 수 있음 */
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-1px);
+}
+
+.btn.danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn.danger:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Main (제품 목록) 스타일 */
+#main {
+    padding: 25px;
+}
+
+#main h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #e9ecef;
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fbfcfd;
+}
+
+tbody tr:hover {
+    background-color: #f1f6fa;
+}
+
+tbody img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* 이미지 비율 유지하며 채우기 */
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+/* 버튼 셀 내 정렬 */
+tbody td:last-child {
+    display: flex;
+    gap: 5px;
+    justify-content: center; /* 버튼 가운데 정렬 */
+    align-items: center;
+}
+
+/* Placeholder 색상 */
+::placeholder {
+    color: #adb5bd;
+    opacity: 1; /* Firefox에서 opacity 기본값 문제 해결 */
+}
