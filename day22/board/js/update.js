@@ -42,4 +42,4 @@ function boardUpdate(){
         location.href = `view.html?no=${selectNo}`
         }
     } //for end
-}//f end 1
+}//f end 11
