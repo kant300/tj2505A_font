@@ -34,3 +34,6 @@ const pcontentInput = document.querySelector('#pconteneInput');
 
 // 현재 로컬 스토리지에 저장된 제품 목록을 불러옵니다.
 const products = getProducts();
+
+// 새 제품 코드를 생성합니다. (기존 제품이 없으면 1, 있으면 마지막 제품 코드 + 1)
+let pcode = products.length == 0 ? 1
