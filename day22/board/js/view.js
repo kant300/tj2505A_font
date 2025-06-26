@@ -67,7 +67,7 @@ function boardUpdateView() {
             const confirm = prompt('비밀번호 입력')
             if (obj.pwd == confirm) {
                 // 만약에 비밀번호가 일치하면 수정페이지로 이동
-                location.href = 'update.html?no=${selectNo}'
+                location.href = `update.html?no=${selectNo}`
             } else {
                 alert('수정불가 : 비밀번호 불일치');
             }
