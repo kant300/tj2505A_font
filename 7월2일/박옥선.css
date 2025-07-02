@@ -1,0 +1,165 @@
+/* ======공통 CSS ===== */
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box; /* 패딩과 테두리가 요소의 너비/높이에 포함되도록 */
+    margin: 0;
+    padding: 0;
+    font-family: 'S-CoreDream-3Light', sans-serif; /* 폰트 전체 적용 */
+}
+
+#wrap {
+    display: flex; /* Flexbox 사용하여 레이아웃 제어 */
+    flex-direction: column; /* 자식 요소를 세로 방향으로 배열 */
+    min-height: 100vh; /* 최소 높이를 뷰포트 높이의 100%로 설정 (푸터 하단 고정) */
+}
+
+#headerwrap {
+    background-color: #c0d968; /* 헤더 배경색 */
+    width: 100%; /* 너비 100% */
+}
+
+/* ===== header ====== */
+#header {
+    width: 1280px; /* 헤더 내용의 고정 너비 */
+    max-width: 100%; /* 화면이 작아지면 너비 100%까지 줄어듦 */
+    margin: 0 auto; /* 중앙 정렬 */
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 로고와 메뉴를 양 끝으로 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    padding: 16px 48px; /* 내부 여백 */
+}
+
+.logo img {
+    width: 140px; /* 로고 이미지 너비 */
+    margin: -40px 0px; /* 이미지 위치 조정 (상단으로 더 올림) */
+    vertical-align: middle; /* 이미지 하단 불필요한 여백 제거 */
+}
+
+.logtopMenu a {
+    margin-left: 50px; /* 링크 간 간격 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #5a5a89; /* 글자색 */
+    font-weight: 500; /* 글자 굵기 */
+    font-size: 18px; /* 폰트 크기 */
+}
+
+/* ===== main ====== */
+.container {
+    flex: 1; /* 남은 공간을 모두 차지하도록 설정 (푸터를 하단으로 밀어냄) */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 자식 요소를 세로 방향으로 배열 */
+    align-items: center; /* 가로축에서 자식 요소를 가운데 정렬 */
+    justify-content: center; /* 세로축에서 자식 요소를 가운데 정렬 */
+    padding: 60px 20px; /* 내부 여백 */
+}
+
+.container h1 { /* 회원가입 제목 스타일 */
+    font-size: 32px; /* 폰트 크기 */
+    margin-bottom: 40px; /* 아래쪽 여백 */
+    color: #333; /* 글자색 */
+}
+
+/* 폼 그룹 (각 입력 필드) 스타일 */
+.form-group {
+    width: 100%; /* 부모의 너비 100% */
+    max-width: 350px; /* 최대 너비 설정 */
+    margin-bottom: 20px; /* 각 입력 필드 그룹 아래 여백 */
+    /* 캔바 이미지에서는 각 입력 필드 사이에 일정한 간격이 있음 */
+}
+
+/* 모든 입력 필드 (성함, 전화번호, 이메일, 비밀번호) 스타일 */
+#signupForm input[type="text"],
+#signupForm input[type="email"],
+#signupForm input[type="password"] {
+    width: 100%; /* 부모 .form-group의 100% 너비 */
+    padding: 18px 25px; /* 내부 여백 (캔바 이미지처럼 높이와 패딩 조정) */
+    font-size: 18px; /* 폰트 크기 */
+    border-radius: 30px; /* 매우 둥근 테두리 (캔바 이미지와 유사) */
+    border: 1px solid #ccc; /* 테두리 색상 조정 (캔바 이미지에 가깝게) */
+    outline: none; /* 클릭 시 아웃라인 제거 */
+}
+
+/* 체크박스 그룹 스타일 */
+.checkbox-group {
+    display: flex; /* Flexbox 사용하여 체크박스와 텍스트를 한 줄에 배치 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    margin-top: 10px; /* 위쪽 여백 */
+    margin-bottom: 40px; /* 아래쪽 여백 (버튼과의 간격) */
+    font-size: 15px; /* 폰트 크기 */
+    color: #555; /* 글자색 */
+    width: 100%;
+    max-width: 350px; /* 입력 필드와 동일한 너비 제한 */
+    /* 캔바 이미지에서는 체크박스 레이블이 입력 필드와 같은 라인에 정렬되어 있습니다. */
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px; /* 체크박스 크기 */
+    height: 20px; /* 체크박스 크기 */
+    margin-right: 8px; /* 체크박스와 텍스트 사이 간격 */
+    vertical-align: middle; /* 텍스트와 수직 정렬 */
+    /* 기본 체크박스 스타일은 브라우저마다 다를 수 있어, 더 세밀한 컨트롤이 필요하면 CSS로 커스터마이징 필요 */
+}
+
+/* 회원가입 버튼 스타일 */
+.btnSignup {
+    width: 100%; /* 너비를 100%로 변경 (캔바 이미지처럼) */
+    max-width: 350px; /* 최대 너비 설정 (입력 필드와 동일하게) */
+    padding: 15px 20px; /* 내부 여백 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 30px; /* 둥근 테두리 */
+    background-color: #c0d968; /* 배경색 */
+    color: #fff; /* 글자색 흰색 */
+    font-size: 20px; /* 폰트 크기 */
+    font-weight: bold; /* 글자 굵게 */
+    cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    transition: background-color 0.3s ease; /* 호버 효과를 위한 전환 */
+    margin-bottom: 20px; /* 로그인 링크와의 간격 */
+}
+
+.btnSignup:hover {
+    background-color: #a4bf57; /* 호버 시 배경색 약간 어둡게 */
+}
+
+/* 로그인 링크 스타일 */
+.login-link {
+    margin-top: 10px; /* 위쪽 여백 */
+    font-size: 15px; /* 폰트 크기 */
+    color: #555; /* 글자색 */
+}
+
+.login-link a {
+    color: #5a5a89; /* 링크 색상 (헤더 메뉴와 동일하게) */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /* 글자 굵게 */
+}
+
+.login-link a:hover {
+    text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+/* ====== footer ====== */
+#footerwrap {
+    background-color: #f7f7f7; /* 푸터 배경색 */
+}
+
+#footer {
+    width: 1280px; /* 푸터 내용의 고정 너비 */
+    margin: 0 auto; /* 중앙 정렬 */
+    background-color: #f7f7f7; /* 푸터 배경색 (headerwrap과 동일) */
+    padding: 24px 48px; /* 내부 여백 */
+    text-align: right; /* 텍스트 오른쪽 정렬 */
+    font-size: 14px; /* 폰트 크기 */
+    color: #333; /* 글자색 */
+}
+
+.footerTop {
+    margin-right: 0; /* 이 여백은 필요 없어 보입니다. */
+    /* 캔바 이미지에는 푸터 영역이 잘려 있어 정확한 배치는 알 수 없지만,
+       일반적으로 푸터 텍스트는 오른쪽 정렬이면 `margin-right`를 별도로 줄 필요 없음 */
+}
