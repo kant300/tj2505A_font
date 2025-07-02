@@ -134,5 +134,5 @@
             [* index.html 있을때]
             https://itdanjalog.github.io/tj2025A_front/
 
-    3. main 브랜치 코드가 변경되고 푸시 이후에 2분~3분 후 호스팅에도 코드가 반영 
+    3. main 브랜치 코드가 변경되고 푸시 이후에 2분~3분 후 gitPage 호스팅에도 코드가 반영 
 
