@@ -1,54 +1,90 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>계정 만들기</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset='utf-8'>
+    <title>회원가입</title>
+    <link rel='stylesheet' href='박옥선.css'>
 </head>
 <body>
-    <div class="container">
-        <h1>계정 만들기</h1>
-
-        <form id="signupForm">
-            <div class="form-group">
-                <label for="username">이름</label>
-                <input type="text" id="username" placeholder="아이디" required>
+    <div id="wrap">
+        <div id="headerwrap">
+            <div id="header">
+                <div class="logo">
+                    <img src="KakaoTalk_20250627_181003323.png" alt="StayPlan 로고" />
+                </div>
+                <div class="logtopMenu">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                </div>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" placeholder="닉네임" required>
+        <div class="container">
+            <h1> 회원가입 </h1>
+            <form id="signupForm">
+                <div class="form-group">
+                    <input id="signup_name" type="text" placeholder="성함" />
+                </div>
+                <div class="form-group">
+                    <input id="signup_phone" type="text" placeholder="전화번호" />
+                </div>
+                <div class="form-group">
+                    <input id="signup_email" type="email" placeholder="이메일" />
+                </div>
+                <div class="form-group">
+                    <input id="signup_pwd" type="password" placeholder="비밀번호" />
+                </div>
+                <div class="form-group">
+                    <input id="confirmPassword" type="password" placeholder="비밀번호 확인" />
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termsAgreement">
+                    <label for="termsAgreement">이용약관 및 개인정보 처리방침에 동의합니다.</label>
+                </div>
+
+                <div id="termsDetail" class="terms-detail-hide">
+                    <h2>이용약관 상세</h2>
+                    <p>
+                        제1조 (목적) 이 약관은 [스테이플랜] (이하 "회사"라 한다)이 제공하는 서비스의 이용과 관련하여 회사와 회원의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+                    </p>
+                    <p>
+                        제2조 (용어의 정의) 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+                        <br>- "서비스"라 함은 회사가 제공하는 모든 서비스 및 제반 부대 서비스를 의미합니다.
+                        <br>- "회원"이라 함은 이 약관에 따라 회사와 이용계약을 체결하고 회사가 제공하는 서비스를 이용하는 자를 의미합니다.
+                        <br>- "아이디(ID)"라 함은 회원의 식별과 서비스 이용을 위하여 회원이 정하고 회사가 승인하는 문자와 숫자의 조합을 의미합니다.
+                        <br>- "비밀번호"라 함은 회원이 부여받은 아이디와 일치되는 회원임을 확인하고 비밀보호를 위해 회원 자신이 정한 문자와 숫자의 조합을 의미합니다.
+                    </p>
+                    <h2>개인정보 처리방침 상세</h2>
+                    <p>
+                        개인정보 처리방침은 [스테이플랜]이 이용자의 개인정보를 어떻게 수집, 이용, 보관, 파기하는지에 대한 정보를 담고 있습니다. 회사는 정보통신망법, 개인정보보호법 등 관련 법령에 따라 회원의 개인정보 보호 및 권익을 존중하며, 다음과 같은 원칙을 준수합니다.
+                    </p>
+                    <p>
+                        1. 개인정보의 수집 및 이용 목적: 서비스 제공, 회원 관리, 신규 서비스 개발 등
+                        <br>2. 수집하는 개인정보 항목: 이름, 전화번호, 이메일, 비밀번호 등
+                        <br>3. 개인정보의 보유 및 이용 기간: 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
+                        <br>4. 개인정보의 제3자 제공: 회원의 동의 없이 개인정보를 외부에 제공하지 않습니다.
+                        <br>5. 개인정보의 파기: 개인정보는 목적 달성 후 복구 불가능한 방법으로 파기됩니다.
+                    </p>
+                    <p class="terms-close-btn" style="text-align: right; margin-top: 15px;">
+                        <a href="#" id="closeTermsDetail">닫기</a>
+                    </p>
+                </div>
+
+                <button type="submit" class="btnSignup"> 회원가입 </button>
+                <div class="login-link">
+                    <p> 이미 회원이신가요 ? <a href="#"> 로그인 </a></p>
+                </div>
+            </form>
+        </div>
+
+        <div id="footerwrap">
+            <div id="footer">
+                <p class="footerTop">스테이플랜</p><br />
+                <p> 숙소 위치 : 강원특별자치도 강릉시 창해로 514 (안현동)</p>
             </div>
-
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" id="email" placeholder="이메일" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" placeholder="비밀번호" required>
-            </div>
-
-            <div class="form-group">
-                <label for="confirmPassword">비밀번호 확인</label>
-                <input type="password" id="confirmPassword" placeholder="비밀번호 확인" required>
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="termsAgreement" required>
-                <label for="termsAgreement">이용약관 및 개인정보 처리방침에 동의합니다.</label>
-            </div>
-
-            <button type="submit" class="create-account-btn">계정 만들기</button>
-        </form>
-
-        <div class="login-link">
-            <p>이미 계정이 있으신가요? <a href="#">로그인 ></a></p>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src='박옥선.js'></script>
 </body>
 </html>

@@ -93,3 +93,67 @@ h1 {
 .login-link a:hover {
     text-decoration: underline;
 }
+/* ... (기존 CSS 코드 유지) ... */
+
+/* 약관 상세 내용 컨테이너 스타일 */
+#termsDetail {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px; /* 체크박스와의 간격 */
+    margin-bottom: 30px; /* 버튼과의 간격 */
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 350px; /* 입력 필드와 동일한 너비 제한 */
+    width: 100%;
+    /* display: none; 대신 opacity와 max-height를 이용해 부드러운 애니메이션 구현 */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden; /* 내용이 넘치면 숨김 */
+    transition: opacity 0.5s ease-out, max-height 0.7s ease-out; /* 부드러운 전환 효과 */
+}
+
+#termsDetail h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+#termsDetail p {
+    margin-bottom: 10px;
+}
+
+#termsDetail p:last-child {
+    margin-bottom: 0;
+}
+
+/* 약관 상세 내용이 보일 때 적용될 클래스 */
+.terms-detail-show {
+    opacity: 1 !important; /* !important로 다른 스타일보다 우선 적용 */
+    max-height: 500px !important; /* 충분히 큰 값으로 설정하여 내용 전체가 보이도록 */
+    /* 실제 내용 길이에 따라 이 값을 조정해야 할 수 있습니다. */
+}
+
+/* 약관 상세 내용이 숨겨질 때 적용될 클래스 (초기 상태) */
+.terms-detail-hide {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* '닫기' 버튼 스타일 */
+.terms-close-btn a {
+    color: #5a5a89;
+    text-decoration: none;
+    font-weight: bold;
+}
+.terms-close-btn a:hover {
+    text-decoration: underline;
+}
+
+/* ... (나머지 기존 CSS 코드 유지) ... */

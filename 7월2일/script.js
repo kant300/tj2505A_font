@@ -32,6 +32,59 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('이용약관 및 개인정보 처리방침에 동의해야 계정을 만들 수 있습니다.');
             return;
         }
+        // ... (기존 userList 및 setLocalStorage, signupButtonHandler 함수 유지) ...
+
+// 2. DOMContentLoaded 이벤트 리스너: HTML 문서 로드 완료 시 실행
+document.addEventListener('DOMContentLoaded', function() {
+    // 2-1. 로컬 스토리지에서 userList 불러오기
+    let storedUserList = localStorage.getItem('userList');
+
+    if (storedUserList) {
+        userList = JSON.parse(storedUserList);
+        console.log('localStorage에서 userList를 불러왔습니다:', userList);
+    } else {
+        console.log('localStorage에 userList가 없습니다. 초기 userList를 저장합니다.');
+        setLocalStorage(userList);
+    }
+
+    // 2-2. 회원가입 폼 제출 이벤트 리스너 연결
+    const signupForm = document.getElementById('signupForm');
+    if (signupForm) {
+        signupForm.addEventListener('submit', signupButtonHandler);
+    } else {
+        console.error("Error: 'signupForm' ID를 가진 폼 요소를 찾을 수 없습니다. HTML을 확인해주세요.");
+    }
+
+    // 2-3. 이용약관 체크박스 및 상세 내용 요소 가져오기
+    const termsAgreementCheckbox = document.getElementById('termsAgreement');
+    const termsDetail = document.getElementById('termsDetail');
+    const closeTermsDetailBtn = document.getElementById('closeTermsDetail');
+
+    // 2-4. 체크박스 변경 시 약관 상세 내용 표시/숨김 토글
+    if (termsAgreementCheckbox && termsDetail) {
+        termsAgreementCheckbox.addEventListener('change', function() {
+            if (this.checked) { // 체크박스가 체크되면
+                termsDetail.classList.remove('terms-detail-hide'); // 숨김 클래스 제거
+                termsDetail.classList.add('terms-detail-show'); // 보임 클래스 추가
+            } else { // 체크박스가 체크 해제되면
+                termsDetail.classList.remove('terms-detail-show'); // 보임 클래스 제거
+                termsDetail.classList.add('terms-detail-hide'); // 숨김 클래스 추가
+            }
+        });
+    }
+
+    // 2-5. 약관 상세 내용 내 '닫기' 버튼 클릭 시 숨김
+    if (closeTermsDetailBtn && termsDetail && termsAgreementCheckbox) {
+        closeTermsDetailBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // 링크의 기본 동작 (페이지 이동) 방지
+            termsDetail.classList.remove('terms-detail-show');
+            termsDetail.classList.add('terms-detail-hide');
+            termsAgreementCheckbox.checked = false; // 체크박스도 해제
+        });
+    }
+});
+
+// ... (기존 setLocalStorage, signupButtonHandler 함수 유지) ...
 
         // 4. 모든 유효성 검사를 통과했을 때 (실제 서비스에서는 여기에 서버 전송 로직 추가)
         alert('계정 만들기가 완료되었습니다! (이것은 가상의 메시지입니다)');
