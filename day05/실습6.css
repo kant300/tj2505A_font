@@ -1,16 +1,16 @@
 /*=====공통 CSS부문========*/
-*{margin: 0px;padding: 0px;}
-*{box-sizing: border-box;}
-a{
-    text-decoration: none;
-    color: black;
+*{margin: 0px;padding: 0px;} /*기본 여백들을 제거*/
+*{box-sizing: border-box;} /*구역 사이즈 기준을 테두리까지 */
+a{ /* 링크 기본속성 제거 */
+    text-decoration: none; /*밑줄 제거*/
+    color: black; /*글자색상*/
 }
-li{list-style-type: none;}
+li{list-style-type: none;} /*ul 또는 ol에서 글머리 (점) 제거 */
 /*=====헤더 CSS부문======*/
 
 #header{
     display: flex;/*하위요소 배치방법*/
-    justify-content: space-between;/*양쪽 끝 균등 가로*/
+    justify-content: space-between;/*양쪽 끝 균등 가로 정렬*/
     align-items: center;/*세로정렬*/
     width: 1280px;
     margin: 10px auto;
@@ -38,12 +38,10 @@ li{list-style-type: none;}
 
 }
 #main{
-    display: flex;
+    display: flex; /*하위 요소들의 배치 방법 */
     justify-content: space-between;/*가로균등정렬*/
-    width: 1280px;
-    margin: 20px auto;
-
-
+    width: 1280px; /* 가로 사이즈 */
+    margin: 20px auto; /*가로 가운데 정렬 */
 }
 .sidebar{
     width: 250px;
@@ -51,9 +49,10 @@ li{list-style-type: none;}
 .content{
     width: 1000px;
 }
+/*======== 본문 사이드 CSS 부문 ======*/
 .sidebar>h3{
     background-color: grey;
-    padding: 10px;
+    padding: 10px; /*안쪽여백*/
     color: white;
 
 }
@@ -68,6 +67,7 @@ li{list-style-type: none;}
     margin-bottom: 20px;
 }
 .content > img{
+    /* img 마크업의 display 속성의 기본값은 inline */
     display: block;
     margin: 0 auto;
 
@@ -80,7 +80,7 @@ li{list-style-type: none;}
 }
 .footer-inner{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 양쪽 끝 균등 가로정렬*/
     width: 1280px;
     margin: 0 auto;
     padding: 30px ;
